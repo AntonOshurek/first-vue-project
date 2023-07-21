@@ -10,7 +10,7 @@
 import { McvNav } from '..';
 
 export default {
-	name: 'MvcHeader',
+	name: 'McvHeader',
 	components: {
 		McvNav,
 	},

@@ -26,7 +26,7 @@
 
 <script>
 export default {
-	name: 'MvcSignUpForm',
+	name: 'McvSignUpForm',
 	data() {
 		return {
 			email: '',
@@ -54,7 +54,7 @@ export default {
 					this.$router.push({ name: 'home' });
 				})
 				.catch((err) => {
-					console.log(err);
+					console.error(err);
 				});
 		},
 	},

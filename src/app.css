@@ -2,9 +2,11 @@
 	--basic-font: 'Work Sans', 'arial', sans-serif;
 
 	--bg: #ffffff;
-	--main-color: rgb(92, 184, 92);
+	--standart-text-color: #000;
+	--main-color: #5cb85c;
 	--input-text-color: #55595c;
 	--standart-white: #ffffff;
+	--error-color: #ff0000;
 
 	--nav-link-color: rgba(0, 0, 0, 0.3);
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);

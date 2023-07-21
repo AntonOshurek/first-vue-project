@@ -1,0 +1,32 @@
+.validation-errors {
+	width: 100%;
+	padding: var(--standart-side-padding);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
+
+.validation-errors__title {
+	font-family: var(--basic-font);
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--error-color);
+}
+
+.validation-errors__list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+}
+
+.validation-errors__item {
+	font-family: var(--basic-font);
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--error-color);
+}
