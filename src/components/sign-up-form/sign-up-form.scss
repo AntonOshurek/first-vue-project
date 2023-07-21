@@ -1,12 +1,11 @@
 .sign-upp-form {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(4, min-content) ;
+	grid-template-rows: repeat(4, min-content);
 	grid-row-gap: 20px;
 }
 
 .sign-upp-form__label {
-
 }
 
 .sign-upp-form__input {
@@ -34,9 +33,14 @@
 
 	border: none;
 	border-radius: 0.3rem;
-	background-color: #5CB85C;
-	border-color: #5CB85C;
+	background-color: #5cb85c;
+	border-color: #5cb85c;
 	cursor: pointer;
 
 	width: max-content;
+
+	&:disabled {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
 }
