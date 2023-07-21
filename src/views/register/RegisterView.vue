@@ -1,26 +1,34 @@
 <template>
 	<div class="register-page container">
-		<MvcHeader></MvcHeader>
+		<McvHeader></McvHeader>
 
 		<div class="register-page__wrap">
 			<div class="register-page__titles">
 				<h2 class="register-page__title">Sign up</h2>
-				<a class="register-page__link" href="">Have an account?</a>
+				<router-link class="register-page__link" to="/login">Have an account?</router-link>
 			</div>
 
-			<MvcSignUpForm></MvcSignUpForm>
+			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
+
+			<McvSignUpForm></McvSignUpForm>
 		</div>
 	</div>
 </template>
 
 <script>
-import { MvcHeader, MvcSignUpForm } from '@/components';
+import { McvHeader, McvSignUpForm, McvValidationErrors } from '@/components';
 
 export default {
 	name: 'McvRegister',
+	computed: {
+		validationErrors() {
+			return this.$store.state.auth.validationErrors;
+		},
+	},
 	components: {
-		MvcHeader,
-		MvcSignUpForm,
+		McvHeader,
+		McvSignUpForm,
+		McvValidationErrors,
 	},
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
 	<nav class="nav">
 		<router-link class="nav__link" to="/">Home</router-link>
+		<router-link class="nav__link" to="/register">Sign in</router-link>
 		<router-link class="nav__link" to="/register">Sign up</router-link>
 	</nav>
 </template>
