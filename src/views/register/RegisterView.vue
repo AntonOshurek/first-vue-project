@@ -1,17 +1,17 @@
 <template>
-	<div class="register-page container">
+	<div class="register-view container">
 		<McvHeader></McvHeader>
 
-		<div class="register-page__wrap">
-			<div class="register-page__titles">
-				<h2 class="register-page__title">Sign up</h2>
-				<router-link class="register-page__link" to="/login">Have an account?</router-link>
+		<main class="register-view__main">
+			<div class="register-view__titles">
+				<h2 class="register-view__title">Sign up</h2>
+				<router-link class="register-view__link" to="/login">Have an account?</router-link>
 			</div>
 
 			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
 
 			<McvSignUpForm></McvSignUpForm>
-		</div>
+		</main>
 	</div>
 </template>
 

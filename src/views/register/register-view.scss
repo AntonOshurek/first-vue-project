@@ -1,4 +1,4 @@
-.register-page {
+.register-view {
 	background-color: var(--bg);
 
 	display: grid;
@@ -6,7 +6,7 @@
 	grid-row-gap: 40px;
 }
 
-.register-page__wrap {
+.register-view__main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,7 +15,7 @@
 	padding: 0 var(--standart-side-padding);
 }
 
-.register-page__titles {
+.register-view__titles {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(2, min-contents);
@@ -23,14 +23,14 @@
 	justify-items: center;
 }
 
-.register-page__title {
+.register-view__title {
 	font-family: var(--basic-font);
 	font-size: 44px;
 	font-weight: 400;
 	color: var(--standart-text-color);
 }
 
-.register-page__link {
+.register-view__link {
 	font-family: var(--basic-font);
 	font-size: 16px;
 	font-weight: 400;
