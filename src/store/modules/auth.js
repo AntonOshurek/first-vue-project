@@ -1,5 +1,7 @@
 import * as authApi from '@/api/auth';
 import { setItem } from '@/helpers/persistanceStorage';
+import { mutationTypes } from '../mutation-types/mutation-types';
+import { actionTypes } from '../action-types/action-types';
 
 const state = {
 	isSubmiting: false,
@@ -9,16 +11,16 @@ const state = {
 };
 
 const mutations = {
-	registerStart(state) {
+	[mutationTypes.authRegisterStart](state) {
 		state.isSubmiting = true;
 		state.validationErrors = null;
 	},
-	registerSuccess(state, payload) {
+	[mutationTypes.authRegisterSuccess](state, payload) {
 		state.isSubmiting = false;
 		state.currentUser = payload;
 		state.isLoggedIn = true;
 	},
-	registerFailure(state, payload) {
+	[mutationTypes.authRegisterFailure](state, payload) {
 		state.isSubmiting = false;
 		state.currentUser = null;
 		state.validationErrors = payload;
@@ -27,19 +29,19 @@ const mutations = {
 };
 
 const actions = {
-	register(context, credentials) {
-		context.commit('registerStart');
+	[actionTypes.authRegister](context, credentials) {
+		context.commit(mutationTypes.authRegisterStart);
 
 		return new Promise((resolve, reject) => {
 			authApi
 				.register(credentials)
 				.then((res) => {
-					context.commit('registerSuccess', res.data.user);
+					context.commit(mutationTypes.authRegisterSuccess, res.data.user);
 					setItem('accessToken', res.data.user.token);
 					resolve(res.data.user);
 				})
 				.catch((err) => {
-					context.commit('registerFailure', err.response.data.errors);
+					context.commit(mutationTypes.authRegisterFailure, err.response.data.errors);
 					reject(err);
 				});
 		});

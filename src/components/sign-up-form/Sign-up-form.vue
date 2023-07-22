@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { actionTypes } from '@/store/action-types/action-types';
 export default {
 	name: 'McvSignUpForm',
 	data() {
@@ -48,9 +49,8 @@ export default {
 			};
 
 			this.$store
-				.dispatch('register', userData)
-				.then((user) => {
-					console.log(`successfully register user ${user.username}`);
+				.dispatch(actionTypes.authRegister, userData)
+				.then(() => {
 					this.$router.push({ name: 'home' });
 				})
 				.catch((err) => {
