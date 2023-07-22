@@ -1,6 +1,7 @@
-import McvNav from './nav/Nav.vue';
-import McvHeader from './header/Header.vue';
-import McvSignUpForm from './sign-up-form/Sign-up-form.vue';
-import McvValidationErrors from './validation-errors/Validation-errors';
+import McvNav from './nav/nav';
+import McvHeader from './header/header';
+import McvSignUpForm from './sign-up-form/sign-up-form';
+import McvValidationErrors from './validation-errors/validation-errors';
+import McvSignInForm from './sign-in-form/sign-in-form';
 
-export { McvNav, McvHeader, McvSignUpForm, McvValidationErrors };
+export { McvNav, McvHeader, McvSignUpForm, McvValidationErrors, McvSignInForm };
