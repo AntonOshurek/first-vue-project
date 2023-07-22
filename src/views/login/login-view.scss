@@ -1,0 +1,44 @@
+.login-view {
+	background-color: var(--bg);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 40px;
+}
+
+.login-view__main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	padding: 0 var(--standart-side-padding);
+}
+
+.login-view__titles {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, min-contents);
+	grid-row-gap: 10px;
+	justify-items: center;
+}
+
+.login-view__title {
+	font-family: var(--basic-font);
+	font-size: 44px;
+	font-weight: 400;
+	color: var(--standart-text-color);
+}
+
+.login-view__link {
+	font-family: var(--basic-font);
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--main-color);
+
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
