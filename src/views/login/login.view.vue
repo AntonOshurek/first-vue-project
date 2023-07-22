@@ -9,12 +9,14 @@
 			</div>
 
 			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
+
+			<McvSignInForm />
 		</main>
 	</div>
 </template>
 
 <script>
-import { McvHeader, McvValidationErrors } from '@/components';
+import { McvHeader, McvValidationErrors, McvSignInForm } from '@/components';
 
 export default {
 	name: 'MvcLogin',
@@ -26,6 +28,7 @@ export default {
 	components: {
 		McvHeader,
 		McvValidationErrors,
+		McvSignInForm,
 	},
 };
 </script>

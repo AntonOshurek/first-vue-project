@@ -26,6 +26,21 @@ const mutations = {
 		state.validationErrors = payload;
 		state.isLoggedIn = false;
 	},
+	[mutationTypes.authLoginStart](state) {
+		state.isSubmiting = true;
+		state.validationErrors = null;
+	},
+	[mutationTypes.authLoginSuccess](state, payload) {
+		state.isSubmiting = false;
+		state.currentUser = payload;
+		state.isLoggedIn = true;
+	},
+	[mutationTypes.authLoginFailure](state, payload) {
+		state.isSubmiting = false;
+		state.currentUser = null;
+		state.validationErrors = payload;
+		state.isLoggedIn = false;
+	},
 };
 
 const actions = {
@@ -42,6 +57,23 @@ const actions = {
 				})
 				.catch((err) => {
 					context.commit(mutationTypes.authRegisterFailure, err.response.data.errors);
+					reject(err);
+				});
+		});
+	},
+	[actionTypes.authLogin](context, credentials) {
+		context.commit(mutationTypes.authLoginStart);
+
+		return new Promise((resolve, reject) => {
+			authApi
+				.login(credentials)
+				.then((res) => {
+					context.commit(mutationTypes.authLoginSuccess, res.data.user);
+					setItem('accessToken', res.data.user.token);
+					resolve(res.data.user);
+				})
+				.catch((err) => {
+					context.commit(mutationTypes.authLoginFailure, err.response.data.errors);
 					reject(err);
 				});
 		});

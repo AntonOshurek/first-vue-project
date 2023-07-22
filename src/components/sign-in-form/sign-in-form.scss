@@ -1,0 +1,45 @@
+.sign-in-form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, min-content);
+	grid-row-gap: 20px;
+}
+
+.sign-in-form__label {}
+
+.sign-in-form__input {
+	width: 280px;
+	padding: 12px 24px;
+
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+
+	font-family: var(--basic-font);
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--input-text-color);
+}
+
+.sign-in-form__submit-btn {
+	justify-self: end;
+
+	padding: 12px 24px;
+
+	font-family: var(--basic-font);
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--standart-white);
+
+	border: none;
+	border-radius: 0.3rem;
+	background-color: var(--main-color);
+	border-color: var(--main-color);
+	cursor: pointer;
+
+	width: max-content;
+
+	&:disabled {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+}
