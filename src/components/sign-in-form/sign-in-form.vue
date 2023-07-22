@@ -20,7 +20,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import { actionTypes } from '@/store/action-types/action-types';
+
 export default {
 	name: 'McvSignInForm',
 	data() {
@@ -29,19 +31,15 @@ export default {
 			password: '',
 		};
 	},
-	computed: {
-		isSubmiting() {
-			return this.$store.state.auth.isSubmiting;
-		},
-	},
+	computed: mapState({
+		isSubmiting: (state) => state.auth.isSubmiting,
+	}),
 	methods: {
 		onSubmit() {
 			const userData = {
 				email: this.email,
 				password: this.password,
 			};
-
-			console.log(userData);
 
 			this.$store
 				.dispatch(actionTypes.authLogin, userData)

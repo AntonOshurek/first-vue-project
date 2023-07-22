@@ -5,7 +5,7 @@
 		<main class="login-view__main">
 			<div class="login-view__titles">
 				<h2 class="login-view__title">Sign in</h2>
-				<router-link class="register-view__link" to="/register">don't have an account?</router-link>
+				<router-link class="register-view__link" to="/register">Need an account?</router-link>
 			</div>
 
 			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
@@ -16,15 +16,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import { McvHeader, McvValidationErrors, McvSignInForm } from '@/components';
 
 export default {
 	name: 'MvcLogin',
-	computed: {
-		validationErrors() {
-			return this.$store.state.auth.validationErrors;
-		},
-	},
+	computed: mapState({
+		validationErrors: (state) => state.auth.validationErrors,
+	}),
 	components: {
 		McvHeader,
 		McvValidationErrors,
