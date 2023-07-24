@@ -2,12 +2,18 @@ import * as authApi from '@/api/auth';
 import { setItem } from '@/helpers/persistanceStorage';
 import { mutationTypes } from '../mutation-types/mutation-types';
 import { actionTypes } from '../action-types/action-types';
+import { getterTypes } from '../getter-types/getter-types';
 
 const state = {
 	isSubmiting: false,
 	currentUser: null,
 	validationErrors: null,
 	isLoggedIn: null,
+};
+const getters = {
+	[getterTypes.currentUser]: (state) => state.currentUser,
+	[getterTypes.isLoggedIn]: (state) => Boolean(state.isLoggedIn),
+	[getterTypes.isAnonymous]: (state) => state.isLoggedIn === false,
 };
 
 const mutations = {
@@ -84,4 +90,5 @@ export default {
 	state,
 	actions,
 	mutations,
+	getters,
 };

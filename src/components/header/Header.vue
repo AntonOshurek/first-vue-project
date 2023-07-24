@@ -6,14 +6,16 @@
 			<McvUserNav />
 		</template>
 
-		<template v-if="!isLoggedIn">
+		<template v-if="isAnonymous">
 			<McvGuestNav />
 		</template>
 	</header>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
 import McvGuestNav from '../nav/guest-nav/guest-nav';
 import McvUserNav from '../nav/user-nav/user-nav';
 
@@ -23,10 +25,23 @@ export default {
 		McvGuestNav,
 		McvUserNav,
 	},
-	computed: mapState({
-		currentUser: (state) => state.auth.currentUser,
-		isLoggedIn: (state) => state.auth.isLoggedIn,
-	}),
+	// computed: mapState({
+	// 	isLoggedIn: (state) => state.auth.isLoggedIn,
+	// }),
+	// computed: {
+	// 	isLoggedIn() {
+	// 		return this.$store.getters[getterTypes.isLoggedIn];
+	// 	},
+	// 	isAnonymous() {
+	// 		return this.$store.getters[getterTypes.isAnonymous];
+	// 	},
+	// },
+	computed: {
+		...mapGetters({
+			isLoggedIn: getterTypes.isLoggedIn,
+			isAnonymous: getterTypes.isAnonymous,
+		}),
+	},
 };
 </script>
 

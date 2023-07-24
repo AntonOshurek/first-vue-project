@@ -21,13 +21,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
 
 export default {
 	name: 'McvUserNav',
-	computed: mapState({
-		currentUser: (state) => state.auth.currentUser,
-	}),
+	// computed: mapState({
+	// 	currentUser: (state) => state.auth.currentUser,
+	// }),
+	computed: {
+		// currentUser() {
+		// 	return this.$store.getters[getterTypes.currentUser];
+		// },
+		...mapGetters({
+			currentUser: getterTypes.currentUser,
+		}),
+	},
 	mounted() {
 		console.log('currentUser:', this.currentUser);
 	},
