@@ -1,6 +1,6 @@
 <template>
-	<div class="register-view container">
-		<McvHeader></McvHeader>
+	<div class="register-view">
+		<!-- <McvHeader></McvHeader> -->
 
 		<main class="register-view__main">
 			<div class="register-view__titles">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { McvHeader, McvSignUpForm, McvValidationErrors } from '@/components';
+import { McvSignUpForm, McvValidationErrors } from '@/components';
 
 export default {
 	name: 'McvRegister',
@@ -26,7 +26,7 @@ export default {
 		},
 	},
 	components: {
-		McvHeader,
+		// McvHeader,
 		McvSignUpForm,
 		McvValidationErrors,
 	},
