@@ -1,19 +1,32 @@
 <template>
 	<header class="header">
-		<h1 class="header__title">VueApp</h1>
+		<router-link class="header__title" :to="{ name: 'home' }">VueApp</router-link>
 
-		<McvNav></McvNav>
+		<template v-if="isLoggedIn">
+			<McvUserNav />
+		</template>
+
+		<template v-if="!isLoggedIn">
+			<McvGuestNav />
+		</template>
 	</header>
 </template>
 
 <script>
-import { McvNav } from '..';
+import { mapState } from 'vuex';
+import McvGuestNav from '../nav/guest-nav/guest-nav';
+import McvUserNav from '../nav/user-nav/user-nav';
 
 export default {
 	name: 'McvHeader',
 	components: {
-		McvNav,
+		McvGuestNav,
+		McvUserNav,
 	},
+	computed: mapState({
+		currentUser: (state) => state.auth.currentUser,
+		isLoggedIn: (state) => state.auth.isLoggedIn,
+	}),
 };
 </script>
 

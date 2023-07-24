@@ -1,6 +1,6 @@
 <template>
 	<div class="login-view">
-		<McvHeader></McvHeader>
+		<!-- <McvHeader></McvHeader> -->
 
 		<main class="login-view__main">
 			<div class="login-view__titles">
@@ -17,7 +17,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import { McvHeader, McvValidationErrors, McvSignInForm } from '@/components';
+import { McvValidationErrors, McvSignInForm } from '@/components';
 
 export default {
 	name: 'MvcLogin',
@@ -25,7 +25,7 @@ export default {
 		validationErrors: (state) => state.auth.validationErrors,
 	}),
 	components: {
-		McvHeader,
+		// McvHeader,
 		McvValidationErrors,
 		McvSignInForm,
 	},

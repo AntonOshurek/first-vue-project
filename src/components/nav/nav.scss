@@ -1,11 +1,16 @@
 .nav {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: stretch;
 	gap: 20px;
 }
 
 .nav__link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
 	font-family: var(--basic-font);
 	color: var(--nav-link-color);
 	font-size: 16px;
@@ -13,11 +18,17 @@
 	text-decoration: none;
 	cursor: pointer;
 
-	&--active {
-		color: var(--nav-link-active-color);
-	}
-
 	&:hover {
 		color: var(--nav-link-hover-color);
 	}
+}
+
+.nav__link--active {
+	color: var(--nav-link-active-color);
+}
+
+.nav__user-img {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
 }
