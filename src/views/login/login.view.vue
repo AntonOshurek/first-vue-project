@@ -1,5 +1,5 @@
 <template>
-	<div class="login-view">
+	<div class="login-view container">
 		<McvHeader></McvHeader>
 
 		<main class="login-view__main">
