@@ -1,7 +1,5 @@
 <template>
 	<div class="register-view">
-		<!-- <McvHeader></McvHeader> -->
-
 		<main class="register-view__main">
 			<div class="register-view__titles">
 				<h2 class="register-view__title">Sign up</h2>
@@ -26,7 +24,6 @@ export default {
 		},
 	},
 	components: {
-		// McvHeader,
 		McvSignUpForm,
 		McvValidationErrors,
 	},
