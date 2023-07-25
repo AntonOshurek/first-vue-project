@@ -62,6 +62,7 @@ const mutations = {
 	[mutationTypes.getCurrentUserFailure](state) {
 		state.isLoading = false;
 		state.isLoggedIn = false;
+		state.currentUser = null;
 	},
 };
 
@@ -97,6 +98,21 @@ const actions = {
 				.catch((err) => {
 					context.commit(mutationTypes.authLoginFailure, err.response.data.errors);
 					reject(err);
+				});
+		});
+	},
+	[actionTypes.getCurrentUser](context) {
+		context.commit(mutationTypes.getCurrentUserStart);
+
+		return new Promise((resolve) => {
+			authApi
+				.getCurrentUser()
+				.then((res) => {
+					context.commit(mutationTypes.getCurrentUserSuccess, res.data.user);
+					resolve(res.data.user);
+				})
+				.catch(() => {
+					context.commit(mutationTypes.getCurrentUserFailure);
 				});
 		});
 	},
