@@ -1,7 +1,8 @@
 import { actionTypes } from '@/store/action-types/action-types';
 import { mutationTypes } from '@/store/mutation-types/mutation-types';
 import authApi from '@/api/auth';
-import { setItem } from '@/helpers/persistanceStorage';
+import storageService from '@/services/storageService';
+import { storageNameForToken } from '@/variables/variables';
 
 const actions = {
 	[actionTypes.authRegister](context, credentials) {
@@ -12,7 +13,7 @@ const actions = {
 				.register(credentials)
 				.then((res) => {
 					context.commit(mutationTypes.authRegisterSuccess, res.data.user);
-					setItem('accessToken', res.data.user.token);
+					storageService.setItem(storageNameForToken, res.data.user.token);
 					resolve(res.data.user);
 				})
 				.catch((err) => {
@@ -29,7 +30,7 @@ const actions = {
 				.login(credentials)
 				.then((res) => {
 					context.commit(mutationTypes.authLoginSuccess, res.data.user);
-					setItem('accessToken', res.data.user.token);
+					storageService.setItem(storageNameForToken, res.data.user.token);
 					resolve(res.data.user);
 				})
 				.catch((err) => {
