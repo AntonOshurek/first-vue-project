@@ -1,8 +1,10 @@
+import { authStoreAlias } from '@/variables/variables';
+
 export const mutationTypes = {
-	authRegisterStart: '[auth] registerStart',
-	authRegisterSuccess: '[auth] registerSuccess',
-	authRegisterFailure: '[auth] registerFailure',
-	authLoginStart: '[auth] loginStart',
-	authLoginSuccess: '[auth] loginSuccess',
-	authLoginFailure: '[auth] loginFailure',
+	authRegisterStart: `${authStoreAlias} registerStart`,
+	authRegisterSuccess: `${authStoreAlias} registerSuccess`,
+	authRegisterFailure: `${authStoreAlias} registerFailure`,
+	authLoginStart: `${authStoreAlias} loginStart`,
+	authLoginSuccess: `${authStoreAlias} loginSuccess`,
+	authLoginFailure: `${authStoreAlias} loginFailure`,
 };

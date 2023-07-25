@@ -14,14 +14,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
 import { McvSignUpForm, McvValidationErrors } from '@/components';
 
 export default {
 	name: 'McvRegister',
 	computed: {
-		validationErrors() {
-			return this.$store.state.auth.validationErrors;
-		},
+		...mapGetters({
+			validationErrors: getterTypes.validationErrors,
+		}),
 	},
 	components: {
 		McvSignUpForm,

@@ -16,14 +16,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
 import { McvValidationErrors, McvSignInForm } from '@/components';
 
 export default {
 	name: 'MvcLogin',
-	computed: mapState({
-		validationErrors: (state) => state.auth.validationErrors,
-	}),
+	computed: {
+		...mapGetters({
+			validationErrors: getterTypes.validationErrors,
+		}),
+	},
 	components: {
 		// McvHeader,
 		McvValidationErrors,
