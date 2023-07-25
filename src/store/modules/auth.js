@@ -9,7 +9,9 @@ const state = {
 	currentUser: null,
 	validationErrors: null,
 	isLoggedIn: null,
+	isLoading: false,
 };
+
 const getters = {
 	[getterTypes.currentUser]: (state) => state.currentUser,
 	[getterTypes.isSubmiting]: (state) => state.isSubmiting,
@@ -47,6 +49,18 @@ const mutations = {
 		state.isSubmiting = false;
 		state.currentUser = null;
 		state.validationErrors = payload;
+		state.isLoggedIn = false;
+	},
+	[mutationTypes.getCurrentUserStart](state) {
+		state.isLoading = true;
+	},
+	[mutationTypes.getCurrentUserSuccess](state, payload) {
+		state.isLoading = false;
+		state.currentUser = payload;
+		state.isLoggedIn = true;
+	},
+	[mutationTypes.getCurrentUserFailure](state) {
+		state.isLoading = false;
 		state.isLoggedIn = false;
 	},
 };

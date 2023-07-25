@@ -8,4 +8,8 @@ const login = (credentials) => {
 	return axios.post('/users/login', { user: credentials });
 };
 
-export { register, login };
+const getCurrentUser = () => {
+	return axios.get('/user');
+};
+
+export { register, login, getCurrentUser };
