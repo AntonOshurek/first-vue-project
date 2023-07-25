@@ -38,9 +38,6 @@ export default {
 			currentUser: getterTypes.currentUser,
 		}),
 	},
-	mounted() {
-		console.log('currentUser:', this.currentUser);
-	},
 };
 </script>
 

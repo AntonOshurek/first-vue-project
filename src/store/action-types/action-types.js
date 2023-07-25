@@ -1,4 +1,7 @@
+import { authStoreAlias } from '@/variables/variables';
+
 export const actionTypes = {
-	authRegister: '[auth] register',
-	authLogin: '[auth] login',
+	authRegister: `${authStoreAlias} register`,
+	authLogin: `${authStoreAlias} login`,
+	getCurrentUser: `${authStoreAlias} getCurrentUser`,
 };

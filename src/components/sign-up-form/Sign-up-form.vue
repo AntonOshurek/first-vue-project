@@ -26,6 +26,7 @@
 
 <script>
 import { actionTypes } from '@/store/action-types/action-types';
+
 export default {
 	name: 'McvSignUpForm',
 	data() {

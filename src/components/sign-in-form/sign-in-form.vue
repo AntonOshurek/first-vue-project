@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
 import { actionTypes } from '@/store/action-types/action-types';
 
 export default {
@@ -31,9 +32,11 @@ export default {
 			password: '',
 		};
 	},
-	computed: mapState({
-		isSubmiting: (state) => state.auth.isSubmiting,
-	}),
+	computed: {
+		...mapGetters({
+			isSubmiting: getterTypes.isSubmiting,
+		}),
+	},
 	methods: {
 		onSubmit() {
 			const userData = {
