@@ -1,15 +1,25 @@
 import axios from './axios';
 
-const register = (credentials) => {
-	return axios.post('/users', { user: credentials });
-};
+class AuthApi {
+	#axiosInstance = null;
 
-const login = (credentials) => {
-	return axios.post('/users/login', { user: credentials });
-};
+	constructor(axiosInstance) {
+		this.#axiosInstance = axiosInstance;
+	}
 
-const getCurrentUser = () => {
-	return axios.get('/user');
-};
+	register = (credentials) => {
+		return this.#axiosInstance.post('/users', { user: credentials });
+	};
 
-export { register, login, getCurrentUser };
+	login = (credentials) => {
+		return this.#axiosInstance.post('/users/login', { user: credentials });
+	};
+
+	getCurrentUser = () => {
+		return this.#axiosInstance.get('/user');
+	};
+}
+
+const authApi = new AuthApi(axios);
+
+export default authApi;

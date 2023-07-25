@@ -1,6 +1,6 @@
 import { actionTypes } from '@/store/action-types/action-types';
 import { mutationTypes } from '@/store/mutation-types/mutation-types';
-import * as authApi from '@/api/auth';
+import authApi from '@/api/auth';
 import { setItem } from '@/helpers/persistanceStorage';
 
 const actions = {
