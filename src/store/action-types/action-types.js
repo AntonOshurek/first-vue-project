@@ -1,7 +1,11 @@
-import { authStoreAlias } from '@/variables/variables';
+import { authStoreAlias, feedStoreAlias } from '@/variables/variables';
 
-export const actionTypes = {
+const actionTypes = {
 	authRegister: `${authStoreAlias} register`,
 	authLogin: `${authStoreAlias} login`,
 	getCurrentUser: `${authStoreAlias} getCurrentUser`,
+
+	getFeed: `${feedStoreAlias} getFeed`,
 };
+
+export { actionTypes };

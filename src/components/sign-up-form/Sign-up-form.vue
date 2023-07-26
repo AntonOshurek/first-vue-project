@@ -26,6 +26,7 @@
 
 <script>
 import { actionTypes } from '@/store/action-types/action-types';
+import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'McvSignUpForm',
@@ -52,7 +53,7 @@ export default {
 			this.$store
 				.dispatch(actionTypes.authRegister, userData)
 				.then(() => {
-					this.$router.push({ name: 'home' });
+					this.$router.push({ name: routesNames.globalFeed });
 				})
 				.catch((err) => {
 					console.error(err);

@@ -5,7 +5,9 @@
 		<main class="login-view__main">
 			<div class="login-view__titles">
 				<h2 class="login-view__title">Sign in</h2>
-				<router-link class="register-view__link" to="/register">Need an account?</router-link>
+				<router-link class="register-view__link" :to="{ name: routesNames.register }"
+					>Need an account?</router-link
+				>
 			</div>
 
 			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
@@ -19,6 +21,7 @@
 import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { McvValidationErrors, McvSignInForm } from '@/components';
+import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'MvcLogin',
@@ -26,6 +29,9 @@ export default {
 		...mapGetters({
 			validationErrors: getterTypes.validationErrors,
 		}),
+		routesNames() {
+			return routesNames;
+		},
 	},
 	components: {
 		// McvHeader,
