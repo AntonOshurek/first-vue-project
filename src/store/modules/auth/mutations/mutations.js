@@ -1,6 +1,6 @@
 import { mutationTypes } from '@/store/mutation-types/mutation-types';
 
-export const mutations = {
+const mutations = {
 	[mutationTypes.authRegisterStart](state) {
 		state.isSubmiting = true;
 		state.validationErrors = null;
@@ -45,3 +45,5 @@ export const mutations = {
 		state.currentUser = null;
 	},
 };
+
+export { mutations };

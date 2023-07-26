@@ -1,9 +1,12 @@
-import { authStoreAlias } from '@/variables/variables';
+import { authStoreAlias, feedStoreAlias } from '@/variables/variables';
 
-export const getterTypes = {
+const getterTypes = {
 	currentUser: `${authStoreAlias} currentUser`,
 	isLoggedIn: `${authStoreAlias} isLoggedIn`,
 	isSubmiting: `${authStoreAlias} isSubmiting`,
 	isAnonymous: `${authStoreAlias} isAnonymous`,
 	validationErrors: `${authStoreAlias} validationErrors`,
+	feedData: `${feedStoreAlias} feedData`,
 };
+
+export { getterTypes };
