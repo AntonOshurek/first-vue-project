@@ -1,6 +1,8 @@
 <template>
 	<header class="header">
-		<router-link class="header__title" :to="{ name: 'home' }">VueApp</router-link>
+		<h1>
+			<router-link class="header__title" :to="{ name: routesNames.globalFeed }">VueApp</router-link>
+		</h1>
 
 		<template v-if="isLoggedIn">
 			<McvUserNav />
@@ -18,6 +20,7 @@ import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import McvGuestNav from '../nav/guest-nav/guest-nav';
 import McvUserNav from '../nav/user-nav/user-nav';
+import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'McvHeader',
@@ -41,6 +44,9 @@ export default {
 			isLoggedIn: getterTypes.isLoggedIn,
 			isAnonymous: getterTypes.isAnonymous,
 		}),
+		routesNames() {
+			return routesNames;
+		},
 	},
 };
 </script>

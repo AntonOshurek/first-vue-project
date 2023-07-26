@@ -1,17 +1,26 @@
 <template>
 	<nav class="nav">
-		<router-link class="nav__link" :to="{ name: 'home' }" active-class="nav-link--active"
+		<router-link
+			class="nav__link"
+			:to="{ name: routesNames.globalFeed }"
+			active-class="nav-link--active"
 			>Home</router-link
 		>
-		<router-link class="nav__link" :to="{ name: 'home' }" active-class="nav-link--active"
+		<router-link
+			class="nav__link"
+			:to="{ name: routesNames.globalFeed }"
+			active-class="nav-link--active"
 			>New Article</router-link
 		>
-		<router-link class="nav__link" :to="{ name: 'home' }" active-class="nav-link--active"
+		<router-link
+			class="nav__link"
+			:to="{ name: routesNames.globalFeed }"
+			active-class="nav-link--active"
 			>Settings</router-link
 		>
 		<router-link
 			class="nav__link"
-			:to="{ name: 'home', params: { slug: currentUser.username } }"
+			:to="{ name: routesNames.globalFeed, params: { slug: currentUser.username } }"
 			active-class="nav-link--active"
 		>
 			<img class="nav__user-img" :src="currentUser.image" alt="" />
@@ -24,6 +33,7 @@
 // import { mapState } from 'vuex';
 import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
+import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'McvUserNav',
@@ -37,6 +47,9 @@ export default {
 		...mapGetters({
 			currentUser: getterTypes.currentUser,
 		}),
+		routesNames() {
+			return routesNames;
+		},
 	},
 };
 </script>

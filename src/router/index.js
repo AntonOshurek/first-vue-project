@@ -1,20 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import * as Views from '../views';
+import { routesNames, routesPath } from '@/variables/rotes';
 
 const routes = [
 	{
-		path: '/',
-		name: 'home',
-		component: Views.HomeView,
+		path: routesPath.root,
+		name: routesNames.globalFeed,
+		component: Views.GlobalFeed,
 	},
 	{
-		path: '/register',
-		name: 'register',
+		path: routesPath.register,
+		name: routesNames.register,
 		component: Views.RegisterView,
 	},
 	{
-		path: '/login',
-		name: 'login',
+		path: routesPath.login,
+		name: routesNames.login,
 		component: Views.LoginView,
 	},
 ];
