@@ -7,6 +7,8 @@ const getterTypes = {
 	isAnonymous: `${authStoreAlias} isAnonymous`,
 	validationErrors: `${authStoreAlias} validationErrors`,
 	feedData: `${feedStoreAlias} feedData`,
+	isLoading: `${feedStoreAlias} isLoading`,
+	error: `${feedStoreAlias} error`,
 };
 
 export { getterTypes };
