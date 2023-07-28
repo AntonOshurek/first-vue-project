@@ -7,18 +7,7 @@
 				<a class="global-feed__nav-link" href="#">Global Feed</a>
 			</nav>
 
-			<div class="popular-tags">
-				<div class="popular-tags__wrap">
-					<h3 class="popular-tags__title">Popular Tags</h3>
-					<ul class="popular-tags__list">
-						<li class="popular-tags__item">tag</li>
-						<li class="popular-tags__item">tagDescription</li>
-						<li class="popular-tags__item">safsdf</li>
-						<li class="popular-tags__item">sdf</li>
-						<li class="popular-tags__item">sdafgdfgg</li>
-					</ul>
-				</div>
-			</div>
+			<McvPopularTags />
 
 			<McvFeed :apiUrl="apiUrl" />
 		</main>
@@ -26,12 +15,13 @@
 </template>
 
 <script>
-import { McvFeed } from '@/components/';
+import { McvFeed, McvPopularTags } from '@/components/';
 
 export default {
 	name: 'McvGlobalFeed',
 	components: {
 		McvFeed,
+		McvPopularTags,
 	},
 	data() {
 		return {
