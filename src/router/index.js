@@ -18,6 +18,36 @@ const routes = [
 		name: routesNames.login,
 		component: Views.LoginView,
 	},
+	{
+		path: routesPath.settings,
+		name: routesNames.settings,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.yourFeed,
+		name: routesNames.yourFeed,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.userProfile,
+		name: routesNames.userProfile,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.article,
+		name: routesNames.article,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.createArticle,
+		name: routesNames.createArticle,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.tag,
+		name: routesNames.tag,
+		component: Views.GlobalFeed,
+	},
 ];
 
 const router = createRouter({

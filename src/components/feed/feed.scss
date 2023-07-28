@@ -45,11 +45,17 @@
 
 .feed-article__username {
 	grid-area: name;
-
 	font-family: var(--basic-font);
 	font-size: 15px;
 	font-weight: 500;
 	color: var(--main-color);
+
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
 }
 
 .feed-article__post-date {
@@ -61,11 +67,15 @@
 	color: var(--articel-date-color);
 }
 
+.feed-article__user-image-link {
+	grid-area: img;
+	text-decoration: none;
+}
+
 .feed-article__author-image {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	grid-area: img;
 	align-self: center;
 }
 
