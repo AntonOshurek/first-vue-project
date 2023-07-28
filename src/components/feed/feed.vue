@@ -60,6 +60,8 @@
 				</article>
 			</li>
 		</ul>
+
+		<McvPagination />
 	</section>
 </template>
 
@@ -70,6 +72,7 @@ import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { actionTypes } from '@/store/action-types/action-types';
 import { routesNames } from '@/variables/rotes';
+import McvPagination from '@/components/pagination/pagination';
 
 export default {
 	name: 'McvFeed',
@@ -88,6 +91,9 @@ export default {
 		routesNames() {
 			return routesNames;
 		},
+	},
+	components: {
+		McvPagination,
 	},
 	mounted() {
 		this.$store.dispatch(actionTypes.getFeed, { apiUrl: this.apiUrl });

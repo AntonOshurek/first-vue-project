@@ -7,8 +7,10 @@ import McvUserNav from './nav/user-nav/user-nav';
 import McvFeed from './feed/feed';
 import McvPopularTags from './popular-tags/popular-tags';
 import McvFeedNavigation from './feed-navigation/feed-navigation';
+import McvPagination from './pagination/pagination';
 
 export {
+	McvPagination,
 	McvGuestNav,
 	McvUserNav,
 	McvHeader,
