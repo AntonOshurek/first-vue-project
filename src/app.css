@@ -14,15 +14,24 @@
 	--tag-item-bg-hover-color: #6b7277;
 	--tag-font-color: #ffffff;
 
+	--feed-nav-link-color: #aaaaaa;
+	--feed-nav-link-hover-color: #5e5e5e;
+	--feed-nav-bottom-border-color: #d0cece;
+
 	--nav-link-color: rgba(0, 0, 0, 0.3);
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);
 	--nav-link-hover-color: rgba(0, 0, 0, 0.6);
 
+	/* sizes */
 	--standart-side-padding: 20px;
+	--feed-nav-bottom-border-height: 1px;
 
 	/* font sizes */
 	--tag-title-font-size: 16px;
 	--tag-title-font-weight: 500;
 	--tag-item-font-size: 13px;
 	--tag-item-font-weight: 400;
+
+	--feed-nav-link-font-size: 16px;
+	--feed-nav-link-font-weight: 400;
 }
