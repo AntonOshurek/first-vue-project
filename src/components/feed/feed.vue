@@ -1,30 +1,33 @@
 <template>
 	<div class="feed">
-		<h3>feed {{ apiUrl }}</h3>
+		<h3 class="visually-hidden">feed overview</h3>
 
 		<div v-if="isLoading">Loading...</div>
 
 		<div v-if="error">Something bad happened.</div>
 
-		<div v-if="feedData">
-			<article v-for="(article, index) in feedData.articles" :key="index">
-				<header>
-					<p>{{ article.author.username }}</p>
-					<time datetime="">
+		<section class="feed-overview" v-if="feedData">
+			<article class="feed-article" v-for="(article, index) in feedData.articles" :key="index">
+				<header class="feed-articel__header">
+					<p class="feed-article__username">{{ article.author.username }}</p>
+					<time class="feed-article__post-date" datetime="">
 						{{ article.createdAt }}
 					</time>
 
-					<div>like {{ article.favoritesCount }}</div>
+					<div class="feed-article__likes">like {{ article.favoritesCount }}</div>
 				</header>
 
-				<h4>{{ article.title }}</h4>
-				<p>{{ article.description }}</p>
+				<h4 class="feed-article__title">{{ article.title }}</h4>
+				<p class="feed-article__description">{{ article.description }}</p>
 
-				<div>
-					<span v-for="(tag, index) in article.tagList" :key="index"> {{ tag }} </span>
+				<div class="feed-article__additionally">
+					<span class="feed-article__tags" v-for="(tag, index) in article.tagList" :key="index">
+						{{ tag }}
+					</span>
+					<a href="#">read more...</a>
 				</div>
 			</article>
-		</div>
+		</section>
 	</div>
 </template>
 

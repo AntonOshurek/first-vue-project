@@ -8,9 +8,21 @@
 	--standart-white: #ffffff;
 	--error-color: #ff0000;
 
+	--tag-block-bg-color: #f3f3f3;
+	--tag-block-title-color: #373a3c;
+	--tag-item-bg-color: #818a91;
+	--tag-item-bg-hover-color: #6b7277;
+	--tag-font-color: #ffffff;
+
 	--nav-link-color: rgba(0, 0, 0, 0.3);
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);
 	--nav-link-hover-color: rgba(0, 0, 0, 0.6);
 
 	--standart-side-padding: 20px;
+
+	/* font sizes */
+	--tag-title-font-size: 16px;
+	--tag-title-font-weight: 500;
+	--tag-item-font-size: 13px;
+	--tag-item-font-weight: 400;
 }
