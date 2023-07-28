@@ -8,9 +8,46 @@
 	--standart-white: #ffffff;
 	--error-color: #ff0000;
 
+	--tag-block-bg-color: #f3f3f3;
+	--tag-block-title-color: #373a3c;
+	--tag-item-bg-color: #818a91;
+	--tag-item-bg-hover-color: #6b7277;
+	--tag-font-color: #ffffff;
+
+	--articel-date-color: #bbb;
+
+	--feed-nav-link-color: #aaaaaa;
+	--feed-nav-link-hover-color: #5e5e5e;
+
+	--feed-bottom-border-color: #d0cece;
+
+	--feed-item-title-text-color: #000;
+	--feed-item-description-text-color: #999;
+	--feed-item-subtext-color: #bbb;
+
 	--nav-link-color: rgba(0, 0, 0, 0.3);
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);
 	--nav-link-hover-color: rgba(0, 0, 0, 0.6);
 
+	/* font sizes */
+	--tag-title-font-size: 16px;
+	--tag-title-font-weight: 500;
+	--tag-item-font-size: 13px;
+	--tag-item-font-weight: 400;
+
+	--feed-nav-link-font-size: 16px;
+	--feed-nav-link-font-weight: 400;
+
+	--feed-title-font-size: 22px;
+	--feed-title-font-weight: 600;
+	--feed-description-font-size: 16px;
+	--feed-description-font-weight: 300;
+	--feed-like-button_font-size: 13px;
+	--feed-like-button-font-weight: 300;
+	--feed-item-subtext-font-size: 13px;
+	--feed-item-subtext-font-weight: 300;
+
+	/* sizes */
 	--standart-side-padding: 20px;
+	--feed-nav-bottom-border-height: 1px;
 }
