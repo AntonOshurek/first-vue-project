@@ -34,6 +34,10 @@
 }
 
 .popular-tags__item {
+	display: flex;
+}
+
+.popular-tags__link {
 	background-color: var(--tag-item-bg-color);
 	border-radius: 20px;
 	padding: 5px 8px;
@@ -42,6 +46,7 @@
 	font-size: var(--tag-item-font-size);
 	font-weight: var(--tag-item-font-weight);
 	color: var(--tag-font-color);
+	text-decoration: none;
 
 	cursor: pointer;
 

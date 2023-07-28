@@ -8,19 +8,19 @@
 		>
 		<router-link
 			class="nav__link"
-			:to="{ name: routesNames.globalFeed }"
+			:to="{ name: routesNames.createArticle }"
 			active-class="nav-link--active"
 			>New Article</router-link
 		>
 		<router-link
 			class="nav__link"
-			:to="{ name: routesNames.globalFeed }"
+			:to="{ name: routesNames.settings }"
 			active-class="nav-link--active"
 			>Settings</router-link
 		>
 		<router-link
 			class="nav__link"
-			:to="{ name: routesNames.globalFeed, params: { slug: currentUser.username } }"
+			:to="{ name: routesNames.userProfile, params: { slug: currentUser.username } }"
 			active-class="nav-link--active"
 		>
 			<img class="nav__user-img" :src="currentUser.image" alt="" />

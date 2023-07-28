@@ -10,11 +10,21 @@
 			<li class="feed-overview__item" v-for="(article, index) in feedData.articles" :key="index">
 				<article class="feed-article">
 					<header class="feed-articel__header">
-						<p class="feed-article__username">{{ article.author.username }}</p>
+						<router-link
+							class="feed-article__username"
+							:to="{ name: routesNames.userProfile, params: { slug: article.author.username } }"
+							>{{ article.author.username }}</router-link
+						>
 						<time class="feed-article__post-date" datetime="">
 							{{ article.createdAt }}
 						</time>
-						<img class="feed-article__author-image" :src="article.author.image" alt="" />
+
+						<router-link
+							class="feed-article__user-image-link"
+							:to="{ name: routesNames.userProfile, params: { slug: article.author.username } }"
+						>
+							<img class="feed-article__author-image" :src="article.author.image" alt="" />
+						</router-link>
 
 						<button class="feed-article__likes" type="button">
 							<svg
@@ -35,7 +45,11 @@
 					<p class="feed-article__description">{{ article.description }}</p>
 
 					<div class="feed-article__additionally">
-						<a class="feed-article__read-more" href="#">read more...</a>
+						<router-link
+							class="feed-article__read-more"
+							:to="{ name: routesNames.article, params: { slug: article.slug } }"
+							>read more...</router-link
+						>
 
 						<div class="feed-article__tags">
 							<span class="feed-article__tag" v-for="(tag, index) in article.tagList" :key="index">
@@ -46,6 +60,8 @@
 				</article>
 			</li>
 		</ul>
+
+		<McvPagination />
 	</section>
 </template>
 
@@ -55,6 +71,8 @@
 import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { actionTypes } from '@/store/action-types/action-types';
+import { routesNames } from '@/variables/rotes';
+import McvPagination from '@/components/pagination/pagination';
 
 export default {
 	name: 'McvFeed',
@@ -70,6 +88,12 @@ export default {
 			feedData: getterTypes.feedData,
 			error: getterTypes.error,
 		}),
+		routesNames() {
+			return routesNames;
+		},
+	},
+	components: {
+		McvPagination,
 	},
 	mounted() {
 		this.$store.dispatch(actionTypes.getFeed, { apiUrl: this.apiUrl });
