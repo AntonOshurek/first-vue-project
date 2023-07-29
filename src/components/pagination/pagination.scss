@@ -17,11 +17,14 @@
 	max-height: 40px;
 
 	overflow: hidden;
+}
 
+.pagination__link {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 
 	background-color: transparent;
 	border: 1px solid var(--pagination-border-color);
@@ -33,6 +36,7 @@
 	font-weight: var(--pagination-font-weight);
 	color: var(--main-color);
 	text-transform: capitalize;
+	text-decoration: none;
 
 	&:hover,
 	&:focus {
@@ -42,7 +46,7 @@
 	}
 }
 
-.pagination__item--active {
+.pagination__link--active {
 	background-color: var(--main-color);
 	border-color: var(--main-color);
 	color: var(--standart-white);

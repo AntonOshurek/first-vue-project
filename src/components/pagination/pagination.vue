@@ -1,7 +1,13 @@
 <template>
 	<ul class="pagination">
 		<li class="pagination__item" v-for="page in pages" :key="page">
-			{{ page }}
+			<router-link
+				class="pagination__link"
+				:to="{ path: url, query: { page: page } }"
+				:class="{ 'pagination__link--active': currentPage === page }"
+			>
+				{{ page }}
+			</router-link>
 		</li>
 	</ul>
 </template>
