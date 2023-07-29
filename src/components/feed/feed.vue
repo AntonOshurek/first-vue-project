@@ -61,7 +61,7 @@
 			</li>
 		</ul>
 
-		<McvPagination />
+		<McvPagination :total="total" :limit="limit" :current-page="currentPage" :url="url" />
 	</section>
 </template>
 
@@ -91,6 +91,14 @@ export default {
 		routesNames() {
 			return routesNames;
 		},
+	},
+	data() {
+		return {
+			total: 500,
+			limit: 10,
+			currentPage: 5,
+			url: '/tags/dragons',
+		};
 	},
 	components: {
 		McvPagination,
