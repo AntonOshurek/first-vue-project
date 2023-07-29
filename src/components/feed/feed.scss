@@ -37,9 +37,8 @@
 	grid-template-columns: min-content 1fr max-content;
 	grid-template-rows: 1fr 1fr;
 	grid-template-areas:
-		"img name likes"
-		"img time likes"
-	;
+		'img name likes'
+		'img time likes';
 	grid-column-gap: 10px;
 }
 

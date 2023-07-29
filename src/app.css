@@ -29,6 +29,8 @@
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);
 	--nav-link-hover-color: rgba(0, 0, 0, 0.6);
 
+	--pagination-border-color: #ddd;
+
 	/* font sizes */
 	--tag-title-font-size: 16px;
 	--tag-title-font-weight: 500;
@@ -46,6 +48,9 @@
 	--feed-like-button-font-weight: 300;
 	--feed-item-subtext-font-size: 13px;
 	--feed-item-subtext-font-weight: 300;
+
+	--pagination-font-size: 16px;
+	--pagination-font-weight: 400;
 
 	/* sizes */
 	--standart-side-padding: 20px;
