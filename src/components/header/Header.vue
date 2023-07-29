@@ -28,6 +28,7 @@ export default {
 		McvGuestNav,
 		McvUserNav,
 	},
+	// test
 	// computed: mapState({
 	// 	isLoggedIn: (state) => state.auth.isLoggedIn,
 	// }),
