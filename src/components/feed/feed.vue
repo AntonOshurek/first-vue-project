@@ -61,7 +61,13 @@
 			</li>
 		</ul>
 
-		<McvPagination :total="total" :limit="limit" :current-page="currentPage" :url="url" />
+		<McvPagination
+			v-if="feedData"
+			:total="feedData.articlesCount"
+			:limit="limit"
+			:current-page="currentPage"
+			:url="baseUrl"
+		/>
 	</section>
 </template>
 
@@ -72,6 +78,7 @@ import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { actionTypes } from '@/store/action-types/action-types';
 import { routesNames } from '@/variables/rotes';
+import { pageItemsLimit } from '@/variables/variables';
 import McvPagination from '@/components/pagination/pagination';
 
 export default {
@@ -91,13 +98,16 @@ export default {
 		routesNames() {
 			return routesNames;
 		},
+		currentPage() {
+			return Number(this.$route.query.page || '1');
+		},
+		baseUrl() {
+			return this.$route.path;
+		},
 	},
 	data() {
 		return {
-			total: 500,
-			limit: 10,
-			currentPage: 5,
-			url: '/tags/dragons',
+			limit: pageItemsLimit,
 		};
 	},
 	components: {
