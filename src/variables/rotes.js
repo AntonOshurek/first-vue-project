@@ -18,7 +18,7 @@ const routesPath = {
 	userProfile: '/userProfile/:slug',
 	article: '/article/:slug',
 	yourFeed: '/yourFeed',
-	tag: '/tags/:slug',
+	tag: '/tag/:slug',
 	createArticle: '/articles/new',
 	editArticle: '/articles/:slug/edit',
 	settings: '/settings',
