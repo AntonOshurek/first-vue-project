@@ -1,6 +1,10 @@
 .global-feed {
 	padding: 50px var(--standart-side-padding);
 	background-color: var(--bg);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 }
 
 .global-feed__main {
