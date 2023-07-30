@@ -80,6 +80,7 @@ import { actionTypes } from '@/store/action-types/action-types';
 import { routesNames } from '@/variables/rotes';
 import { pageItemsLimit } from '@/variables/variables';
 import McvPagination from '@/components/pagination/pagination';
+import queryString from 'query-string';
 
 export default {
 	name: 'McvFeed',
@@ -104,6 +105,9 @@ export default {
 		baseUrl() {
 			return this.$route.path;
 		},
+		offset() {
+			return this.currentPage * this.limit - this.limit;
+		},
 	},
 	data() {
 		return {
@@ -114,7 +118,7 @@ export default {
 		McvPagination,
 	},
 	mounted() {
-		this.$store.dispatch(actionTypes.getFeed, { apiUrl: this.apiUrl });
+		this.fetchFeed();
 	},
 	watch: {
 		feedData: {
@@ -122,6 +126,27 @@ export default {
 				console.log(newValue);
 			},
 			immediate: true,
+		},
+		currentPage: {
+			handler(newValue) {
+				console.log(newValue);
+				this.fetchFeed();
+			},
+			immediate: true,
+		},
+	},
+	methods: {
+		fetchFeed() {
+			const parsedUrl = queryString.parseUrl(this.apiUrl);
+
+			const stringifiedParams = queryString.stringify({
+				limit: this.limit,
+				offset: this.offset,
+				...parsedUrl.query,
+			});
+			const apiUrlWithParams = `${parsedUrl.url}?${stringifiedParams}`;
+
+			this.$store.dispatch(actionTypes.getFeed, { apiUrl: apiUrlWithParams });
 		},
 	},
 };
