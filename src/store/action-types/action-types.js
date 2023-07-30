@@ -1,4 +1,4 @@
-import { authStoreAlias, feedStoreAlias } from '@/variables/variables';
+import { authStoreAlias, feedStoreAlias, popularTagsStoreAlias } from '@/variables/variables';
 
 const actionTypes = {
 	authRegister: `${authStoreAlias} register`,
@@ -6,6 +6,8 @@ const actionTypes = {
 	getCurrentUser: `${authStoreAlias} getCurrentUser`,
 
 	getFeed: `${feedStoreAlias} getFeed`,
+
+	getPopularTags: `${popularTagsStoreAlias} getPopularTags`,
 };
 
 export { actionTypes };

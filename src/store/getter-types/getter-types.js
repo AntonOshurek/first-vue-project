@@ -1,4 +1,4 @@
-import { authStoreAlias, feedStoreAlias } from '@/variables/variables';
+import { authStoreAlias, feedStoreAlias, popularTagsStoreAlias } from '@/variables/variables';
 
 const getterTypes = {
 	currentUser: `${authStoreAlias} currentUser`,
@@ -9,6 +9,10 @@ const getterTypes = {
 	feedData: `${feedStoreAlias} feedData`,
 	isLoading: `${feedStoreAlias} isLoading`,
 	error: `${feedStoreAlias} error`,
+
+	popularTagsData: `${popularTagsStoreAlias} popularTagsData`,
+	popularTagsLoading: `${popularTagsStoreAlias} popularTagsLoading`,
+	popularTagsError: `${popularTagsStoreAlias} popularTagsError`,
 };
 
 export { getterTypes };
