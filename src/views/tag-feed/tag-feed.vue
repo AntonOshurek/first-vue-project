@@ -28,7 +28,7 @@ export default {
 		},
 		apiUrl() {
 			const tagName = this.$route.params.slug;
-			return `/articles?tag={${tagName}}`;
+			return `/articles?tag=${tagName}`;
 		},
 	},
 };
