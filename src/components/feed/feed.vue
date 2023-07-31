@@ -2,7 +2,7 @@
 	<section class="feed">
 		<h3 class="visually-hidden">feed overview</h3>
 
-		<div v-if="isLoading">Loading...</div>
+		<McvLoading v-if="isLoading" />
 
 		<div v-if="error">Something bad happened.</div>
 
@@ -81,6 +81,7 @@ import { routesNames } from '@/variables/rotes';
 import { pageItemsLimit } from '@/variables/variables';
 import McvPagination from '@/components/pagination/pagination';
 import queryString from 'query-string';
+import McvLoading from '@/components/loading/loading';
 
 export default {
 	name: 'McvFeed',
@@ -116,6 +117,7 @@ export default {
 	},
 	components: {
 		McvPagination,
+		McvLoading,
 	},
 	mounted() {
 		this.fetchFeed();

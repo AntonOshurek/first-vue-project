@@ -1,0 +1,38 @@
+.loading {
+	width: 100%;
+	height: min-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.loading__text {
+	font-family: var(--basic-font);
+	font-size: var(--loading-font-size);
+	font-weight: var(--loading-font-weight);
+	color: var(--main-color);
+}
+
+.loading__svg {
+  width: 40px;
+  height: 40px;
+}
+
+.loading__svg path:nth-child(1) {
+  opacity: 0.2;
+  fill: var(--main-color);
+}
+
+.loading__svg path:nth-child(2) {
+  fill: var(--main-color);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
