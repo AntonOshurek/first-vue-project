@@ -3,7 +3,7 @@
 		<main class="global-feed__main">
 			<h2 class="visually-hidden">Tag feed page</h2>
 
-			<McvFeedNavigation />
+			<McvFeedNavigation :tag-name="tagName" />
 
 			<McvPopularTags />
 
@@ -23,6 +23,9 @@ export default {
 		McvFeedNavigation,
 	},
 	computed: {
+		tagName() {
+			return this.$route.params.slug;
+		},
 		apiUrl() {
 			const tagName = this.$route.params.slug;
 			return `/articles?tag={${tagName}}`;

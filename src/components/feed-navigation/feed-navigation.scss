@@ -7,9 +7,12 @@
 	border-bottom: var(--feed-nav-bottom-border-height) solid var(--feed-bottom-border-color);
 }
 
-.global-feed__nav-link {
+ .global-feed__nav-link {
 	position: relative;
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
 	padding: 8px 16px;
 	text-decoration: none;
 	cursor: pointer;
@@ -23,19 +26,25 @@
 	&:hover,
 	&:focus {
 		color: var(--feed-nav-link-hover-color);
+	}
+}
 
-		&:after {
-			position: absolute;
-			content: '';
-			bottom: calc(0px - var(--feed-nav-bottom-border-height));
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background-color: var(--main-color);
-		}
+.global-feed__nav-link--active {
+	color: var(--main-color);
+
+	&:after {
+		position: absolute;
+		content: '';
+		bottom: calc(0px - var(--feed-nav-bottom-border-height));
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--main-color);
 	}
 
-	&--active {
-		color: var(--main-color);
-	}
+	pointer-events: none;
+}
+
+.global-feed__nav-link-hash {
+	font-weight: 600;
 }
