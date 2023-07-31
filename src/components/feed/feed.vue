@@ -6,6 +6,8 @@
 
 		<McvError v-if="error" :message="error" />
 
+		<div v-if="feedData && feedData.articlesCount === 0">No articles are here... yet.</div>
+
 		<ul class="feed-list" v-if="feedData">
 			<li class="feed-overview__item" v-for="(article, index) in feedData.articles" :key="index">
 				<article class="feed-article">

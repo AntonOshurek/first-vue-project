@@ -1,0 +1,33 @@
+.global-feed {
+	padding: 50px var(--standart-side-padding);
+	background-color: var(--bg);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.global-feed__main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 250px;
+	grid-template-rows: min-content 1fr;
+	grid-row-gap: 30px;
+	grid-column-gap: 40px;
+
+	grid-template-areas:
+		"nav nav tags"
+		"feed feed tags"
+	;
+}
+
+.global-feed__nav {
+	grid-area: nav;
+}
+
+.popular-tags {
+	grid-area: tags;
+}
+
+.feed {
+	grid-area: feed;
+}
