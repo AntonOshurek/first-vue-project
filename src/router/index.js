@@ -46,7 +46,7 @@ const routes = [
 	{
 		path: routesPath.tag,
 		name: routesNames.tag,
-		component: Views.GlobalFeed,
+		component: Views.TagFeed,
 	},
 ];
 
