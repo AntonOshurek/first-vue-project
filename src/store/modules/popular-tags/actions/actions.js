@@ -4,7 +4,7 @@ import { getPopularTags } from '@/api/popular-tags';
 
 const actions = {
 	[actionTypes.getPopularTags](context) {
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve) => {
 			context.commit(mutationTypes.getPopularTagsStart);
 
 			getPopularTags()
@@ -15,8 +15,8 @@ const actions = {
 					resolve(data);
 				})
 				.catch((err) => {
-					context.commit(mutationTypes.getPopularTagsFailure);
-					reject(err);
+					console.log(err);
+					context.commit(mutationTypes.getPopularTagsFailure, err);
 				});
 		});
 	},

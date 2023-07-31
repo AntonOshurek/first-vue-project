@@ -9,9 +9,10 @@ const mutations = {
 		state.isLoading = false;
 		state.data = payload;
 	},
-	[mutationTypes.getFeedFailure](state) {
+	[mutationTypes.getFeedFailure](state, payload) {
 		state.isLoading = false;
 		state.data = null;
+		state.error = payload;
 	},
 };
 

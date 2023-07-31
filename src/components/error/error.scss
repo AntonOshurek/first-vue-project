@@ -1,0 +1,15 @@
+.error {
+	width: 100%;
+	height: min-content;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.error__text {
+	font-family: var(--basic-font);
+	font-size: var(--error-font-size);
+	font-weight: var(--error-font-weight);
+	color: var(--error-color);
+}

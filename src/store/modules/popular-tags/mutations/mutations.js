@@ -9,8 +9,9 @@ const mutations = {
 		state.isLoading = false;
 		state.data = payload;
 	},
-	[mutationTypes.getPopularTagsFailure](state) {
+	[mutationTypes.getPopularTagsFailure](state, payload) {
 		state.isLoading = false;
+		state.error = payload;
 	},
 };
 

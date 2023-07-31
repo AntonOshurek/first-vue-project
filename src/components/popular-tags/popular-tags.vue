@@ -3,9 +3,9 @@
 		<div class="popular-tags__wrap">
 			<h3 class="popular-tags__title">Popular Tags</h3>
 
-			<div v-if="isLoading">Loading...</div>
+			<McvLoading v-if="isLoading" />
 
-			<div v-if="error">Somthing bad happened</div>
+			<McvError v-if="error" :message="error" />
 
 			<ul class="popular-tags__list" v-if="popularTags">
 				<li class="popular-tags__item" v-for="(tag, index) in popularTags" :key="index">
@@ -26,6 +26,8 @@ import { mapGetters } from 'vuex';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { routesNames } from '@/variables/rotes';
 import { actionTypes } from '@/store/action-types/action-types';
+import McvLoading from '@/components/loading/loading';
+import McvError from '@/components/error/error';
 
 export default {
 	name: 'McvPopularTags',
@@ -46,6 +48,10 @@ export default {
 		fetchPopularTags() {
 			this.$store.dispatch(actionTypes.getPopularTags);
 		},
+	},
+	components: {
+		McvLoading,
+		McvError,
 	},
 };
 </script>

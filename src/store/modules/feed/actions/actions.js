@@ -6,7 +6,7 @@ const actions = {
 	[actionTypes.getFeed](context, params) {
 		const { apiUrl } = params;
 
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve) => {
 			context.commit(mutationTypes.getFeedStart);
 
 			getFeed(apiUrl)
@@ -17,8 +17,7 @@ const actions = {
 					resolve(data);
 				})
 				.catch((err) => {
-					context.commit(mutationTypes.getFeedFailure);
-					reject(err);
+					context.commit(mutationTypes.getFeedFailure, err);
 				});
 		});
 	},

@@ -26,7 +26,7 @@ const routes = [
 	{
 		path: routesPath.yourFeed,
 		name: routesNames.yourFeed,
-		component: Views.GlobalFeed,
+		component: Views.YourFeed,
 	},
 	{
 		path: routesPath.userProfile,
@@ -46,7 +46,7 @@ const routes = [
 	{
 		path: routesPath.tag,
 		name: routesNames.tag,
-		component: Views.GlobalFeed,
+		component: Views.TagFeed,
 	},
 ];
 
