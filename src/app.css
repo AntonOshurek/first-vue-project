@@ -55,6 +55,9 @@
 	--loading-font-size: 16px;
 	--loading-font-weight: 600;
 
+	--error-font-size: 16px;
+	--error-font-weight: 600;
+
 	/* sizes */
 	--standart-side-padding: 20px;
 	--feed-nav-bottom-border-height: 1px;

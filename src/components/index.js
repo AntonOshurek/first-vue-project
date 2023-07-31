@@ -8,6 +8,7 @@ import McvFeed from './feed/feed';
 import McvPopularTags from './popular-tags/popular-tags';
 import McvFeedNavigation from './feed-navigation/feed-navigation';
 import McvPagination from './pagination/pagination';
+import McvLoading from './loading/loading';
 
 export {
 	McvPagination,
@@ -20,4 +21,5 @@ export {
 	McvFeed,
 	McvPopularTags,
 	McvFeedNavigation,
+	McvLoading,
 };

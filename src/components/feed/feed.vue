@@ -4,7 +4,7 @@
 
 		<McvLoading v-if="isLoading" />
 
-		<div v-if="error">Something bad happened.</div>
+		<McvError v-if="error" :message="error" />
 
 		<ul class="feed-list" v-if="feedData">
 			<li class="feed-overview__item" v-for="(article, index) in feedData.articles" :key="index">
@@ -82,6 +82,7 @@ import { pageItemsLimit } from '@/variables/variables';
 import McvPagination from '@/components/pagination/pagination';
 import queryString from 'query-string';
 import McvLoading from '@/components/loading/loading';
+import McvError from '@/components/error/error';
 
 export default {
 	name: 'McvFeed',
@@ -118,20 +119,14 @@ export default {
 	components: {
 		McvPagination,
 		McvLoading,
+		McvError,
 	},
 	mounted() {
 		this.fetchFeed();
 	},
 	watch: {
-		feedData: {
-			handler(newValue) {
-				console.log(newValue);
-			},
-			immediate: true,
-		},
 		currentPage: {
-			handler(newValue) {
-				console.log(newValue);
+			handler() {
 				this.fetchFeed();
 			},
 			immediate: true,
