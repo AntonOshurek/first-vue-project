@@ -19,6 +19,8 @@
 
 				<McvArticleControls :article-data="articleData" />
 			</div>
+
+			<McvCommentForm />
 		</main>
 	</div>
 </template>
@@ -34,6 +36,7 @@ import {
 	McvArticleTags,
 	McvArticleControls,
 	McvArticleAuthor,
+	McvCommentForm,
 } from '@/components';
 import McvError from '@/components/error/error';
 
@@ -67,6 +70,7 @@ export default {
 		McvError,
 		McvArticleControls,
 		McvArticleAuthor,
+		McvCommentForm,
 	},
 };
 </script>

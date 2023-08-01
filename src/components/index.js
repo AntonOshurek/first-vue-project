@@ -13,6 +13,7 @@ import McvArticleHeader from './article-header/article-header';
 import McvArticleTags from './article-tags/article-tags';
 import McvArticleAuthor from './article-author/article-author';
 import McvArticleControls from '@/components/article-controls/article-controls';
+import McvCommentForm from '@/components/comment-form/comment-form';
 
 export {
 	McvPagination,
@@ -30,4 +31,5 @@ export {
 	McvArticleTags,
 	McvArticleAuthor,
 	McvArticleControls,
+	McvCommentForm,
 };
