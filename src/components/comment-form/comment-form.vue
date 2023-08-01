@@ -12,6 +12,7 @@
 					alt=""
 					width="30"
 					height="30"
+					v-if="currentUser"
 				/>
 				<button class="comment-form__submit-button" type="button">Post Comment</button>
 			</div>
