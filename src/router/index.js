@@ -44,6 +44,11 @@ const routes = [
 		component: Views.GlobalFeed,
 	},
 	{
+		path: routesPath.editArticle,
+		name: routesNames.editArticle,
+		component: Views.GlobalFeed,
+	},
+	{
 		path: routesPath.tag,
 		name: routesNames.tag,
 		component: Views.TagFeed,
