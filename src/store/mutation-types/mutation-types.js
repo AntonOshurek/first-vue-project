@@ -1,4 +1,9 @@
-import { authStoreAlias, feedStoreAlias, popularTagsStoreAlias } from '@/variables/variables';
+import {
+	authStoreAlias,
+	feedStoreAlias,
+	popularTagsStoreAlias,
+	articleStoreAlias,
+} from '@/variables/variables';
 
 const mutationTypes = {
 	authRegisterStart: `${authStoreAlias} registerStart`,
@@ -20,6 +25,10 @@ const mutationTypes = {
 	getPopularTagsStart: `${popularTagsStoreAlias} getPopularTagsStart`,
 	getPopularTagsSuccess: `${popularTagsStoreAlias} getPopularTagsSuccess`,
 	getPopularTagsFailure: `${popularTagsStoreAlias} getPopularTagsFailure`,
+
+	getArticleStart: `${articleStoreAlias} getArticleStart`,
+	getArticleSuccess: `${articleStoreAlias} getArticleSuccess`,
+	getArticleFailure: `${articleStoreAlias} getArticleFailure`,
 };
 
 export { mutationTypes };

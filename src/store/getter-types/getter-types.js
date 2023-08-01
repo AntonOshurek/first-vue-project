@@ -1,4 +1,9 @@
-import { authStoreAlias, feedStoreAlias, popularTagsStoreAlias } from '@/variables/variables';
+import {
+	authStoreAlias,
+	feedStoreAlias,
+	popularTagsStoreAlias,
+	articleStoreAlias,
+} from '@/variables/variables';
 
 const getterTypes = {
 	currentUser: `${authStoreAlias} currentUser`,
@@ -6,6 +11,7 @@ const getterTypes = {
 	isSubmiting: `${authStoreAlias} isSubmiting`,
 	isAnonymous: `${authStoreAlias} isAnonymous`,
 	validationErrors: `${authStoreAlias} validationErrors`,
+
 	feedData: `${feedStoreAlias} feedData`,
 	isLoading: `${feedStoreAlias} isLoading`,
 	error: `${feedStoreAlias} error`,
@@ -13,6 +19,10 @@ const getterTypes = {
 	popularTagsData: `${popularTagsStoreAlias} popularTagsData`,
 	popularTagsLoading: `${popularTagsStoreAlias} popularTagsLoading`,
 	popularTagsError: `${popularTagsStoreAlias} popularTagsError`,
+
+	articleData: `${articleStoreAlias} article`,
+	articleLoading: `${articleStoreAlias} articleLoading`,
+	articleError: `${articleStoreAlias} articleError`,
 };
 
 export { getterTypes };
