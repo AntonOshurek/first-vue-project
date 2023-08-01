@@ -11,6 +11,8 @@ import McvPagination from './pagination/pagination';
 import McvLoading from './loading/loading';
 import McvArticleHeader from './article-header/article-header';
 import McvArticleTags from './article-tags/article-tags';
+import McvArticleAuthor from './article-author/article-author';
+import McvArticleControls from '@/components/article-controls/article-controls';
 
 export {
 	McvPagination,
@@ -26,4 +28,6 @@ export {
 	McvLoading,
 	McvArticleHeader,
 	McvArticleTags,
+	McvArticleAuthor,
+	McvArticleControls,
 };

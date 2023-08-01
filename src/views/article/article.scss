@@ -23,9 +23,13 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(2, max-content);
-	gap: 10px;
+	gap: 30px;
+
+	align-content: flex-start;
 
 	padding: 32px var(--standart-side-padding);
+
+	border-bottom: 1px solid var(--article-bottom-border-color);
 }
 
 .article__text {
@@ -37,9 +41,13 @@
 }
 
 .article__tags {
-
+	width: min-content;
 }
 
-.article__tag {
-
+.article__bottom-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 32px var(--standart-side-padding);
 }

@@ -1,0 +1,45 @@
+.article-author {
+	display: grid;
+	grid-template-columns: repeat(2, max-content);
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'img name'
+		'img time';
+	grid-column-gap: 10px;
+}
+
+.article-author__username {
+	grid-area: name;
+	font-family: var(--basic-font);
+	font-size: 15px;
+	font-weight: 500;
+	color: var(--main-color);
+
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.article-author__post-date {
+	grid-area: time;
+
+	font-family: var(--basic-font);
+	font-size: 12px;
+	font-weight: 300;
+	color: var(--articel-date-color);
+}
+
+.article-author__user-image-link {
+	grid-area: img;
+	text-decoration: none;
+}
+
+.article-author__author-image {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	align-self: center;
+}

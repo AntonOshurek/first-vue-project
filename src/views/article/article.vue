@@ -11,8 +11,14 @@
 			<section class="article__body" v-if="articleData">
 				<p class="article__text">{{ articleData.body }}</p>
 
-				<McvArticleTags :tags-array="articleData.tagList" />
+				<McvArticleTags :tags-array="articleData.tagList" class="article__tags" />
 			</section>
+
+			<div class="article__bottom-controls" v-if="articleData">
+				<McvArticleAuthor :article-data="articleData" />
+
+				<McvArticleControls :article-data="articleData" />
+			</div>
 		</main>
 	</div>
 </template>
@@ -23,7 +29,12 @@ import { actionTypes } from '@/store/action-types/action-types';
 import { getterTypes } from '@/store/getter-types/getter-types';
 import { McvLoading } from '@/components';
 import { routesNames } from '@/variables/rotes';
-import { McvArticleHeader, McvArticleTags } from '@/components';
+import {
+	McvArticleHeader,
+	McvArticleTags,
+	McvArticleControls,
+	McvArticleAuthor,
+} from '@/components';
 import McvError from '@/components/error/error';
 
 export default {
@@ -54,6 +65,8 @@ export default {
 		McvArticleHeader,
 		McvArticleTags,
 		McvError,
+		McvArticleControls,
+		McvArticleAuthor,
 	},
 };
 </script>
