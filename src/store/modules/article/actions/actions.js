@@ -11,10 +11,10 @@ const actions = {
 
 			getArticle(slug)
 				.then((res) => {
-					const data = res.data;
+					const article = res;
 
-					context.commit(mutationTypes.getArticleSuccess, data);
-					resolve(data);
+					context.commit(mutationTypes.getArticleSuccess, article);
+					resolve(article);
 				})
 				.catch((err) => {
 					context.commit(mutationTypes.getArticleFailure, err);
