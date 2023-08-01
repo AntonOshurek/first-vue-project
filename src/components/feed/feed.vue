@@ -53,11 +53,7 @@
 							>read more...</router-link
 						>
 
-						<div class="feed-article__tags">
-							<span class="feed-article__tag" v-for="(tag, index) in article.tagList" :key="index">
-								{{ tag }}
-							</span>
-						</div>
+						<McvArticleTags :tags-array="article.tagList" />
 					</div>
 				</article>
 			</li>
@@ -85,6 +81,7 @@ import McvPagination from '@/components/pagination/pagination';
 import queryString from 'query-string';
 import McvLoading from '@/components/loading/loading';
 import McvError from '@/components/error/error';
+import McvArticleTags from '@/components/article-tags/article-tags';
 
 export default {
 	name: 'McvFeed',
@@ -122,6 +119,7 @@ export default {
 		McvPagination,
 		McvLoading,
 		McvError,
+		McvArticleTags,
 	},
 	mounted() {
 		this.fetchFeed();

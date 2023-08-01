@@ -1,0 +1,19 @@
+.article-tags {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3px;
+}
+
+.article-tags__tag {
+	padding: 4px 7px;
+	border-radius: 20px;
+	border: 1px solid var(--article-tag-color);
+
+	font-family: var(--basic-font);
+	font-size: var(--article-tag-font-size);
+	font-weight: var(--article-tag-font-weight);
+	color: var(--article-tag-color);
+
+	cursor: pointer;
+}

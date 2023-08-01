@@ -8,7 +8,7 @@
 	grid-template-rows: min-content 1fr min-content;
 }
 
-.article-header {
+.article-header-wrap {
 	width: 100%;
 	height: 210px;
 	max-height: 250px;
@@ -19,122 +19,27 @@
 	background: #333;
 }
 
-.article-header__wrap {
-	width: 100%;
-	height: 100%;
-
+.article__body {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr min-content;
+	grid-template-rows: repeat(2, max-content);
+	gap: 10px;
+
+	padding: 32px var(--standart-side-padding);
 }
 
-.article-header__title {
+.article__text {
 	font-family: var(--basic-font);
-	font-size: 32px;
-	font-weight: 600;
-	color: #fff;
-	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+	font-size: 18px;
+	font-weight: 400;
+	color: #000;
+	line-height: 26px;
 }
 
-.article-header__user-info {
-	display: grid;
-	grid-template-columns: repeat(3, max-content);
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas:
-		'img name controls'
-		'img time controls';
-	grid-column-gap: 10px;
+.article__tags {
+
 }
 
-.article-header__username {
-	grid-area: name;
-	font-family: var(--basic-font);
-	font-size: 15px;
-	font-weight: 500;
-	color: var(--main-color);
+.article__tag {
 
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
-}
-
-.article-header__post-date {
-	grid-area: time;
-
-	font-family: var(--basic-font);
-	font-size: 12px;
-	font-weight: 300;
-	color: var(--articel-date-color);
-}
-
-.article-header__user-image-link {
-	grid-area: img;
-	text-decoration: none;
-}
-
-.article-header__author-image {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	align-self: center;
-}
-
-.article-header__controls {
-	grid-area: controls;
-
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: max-content;
-	grid-gap: 10px;
-	align-content: center;
-}
-
-.article-header__button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	padding: 3px 9px;
-
-	font-family: var(--basic-font);
-	font-size: 14px;
-	font-weight: 300;
-	color: #ccc;
-	line-height: 1.25;
-
-	background-color: transparent;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-
-	cursor: pointer;
-
-	&:hover,
-	&:focus {
-		color: #fff;
-		background-color: rgb(159, 155, 155);
-	}
-}
-
-.article-header__button--favorite {
-	flex-direction: row-reverse;
-	gap: 3px;
-
-	color: var(--main-color);
-	border: 1px solid var(--main-color);
-	&:hover,
-	&:focus {
-		color: var(--standart-white);
-		background-color: var(--main-color);
-
-		& > svg {
-			fill: var(--standart-white);
-		}
-	}
-
-	& > svg {
-		fill: var(--main-color);
-	}
 }

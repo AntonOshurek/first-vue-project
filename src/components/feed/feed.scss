@@ -148,23 +148,3 @@
 
 	text-decoration: none;
 }
-
-.feed-article__tags {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 3px;
-}
-
-.feed-article__tag {
-	padding: 4px 7px;
-	border-radius: 20px;
-	border: 1px solid var(--feed-item-subtext-color);
-
-	font-family: var(--basic-font);
-	font-size: var(--feed-item-subtext-font-size);
-	font-weight: var(--feed-item-subtext-font-weight);
-	color: var(--feed-item-subtext-color);
-
-	cursor: pointer;
-}
