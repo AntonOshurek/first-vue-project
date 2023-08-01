@@ -36,11 +36,16 @@ const routes = [
 	{
 		path: routesPath.article,
 		name: routesNames.article,
-		component: Views.GlobalFeed,
+		component: Views.Article,
 	},
 	{
 		path: routesPath.createArticle,
 		name: routesNames.createArticle,
+		component: Views.GlobalFeed,
+	},
+	{
+		path: routesPath.editArticle,
+		name: routesNames.editArticle,
 		component: Views.GlobalFeed,
 	},
 	{

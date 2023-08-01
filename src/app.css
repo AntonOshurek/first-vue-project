@@ -19,11 +19,13 @@
 	--feed-nav-link-color: #aaaaaa;
 	--feed-nav-link-hover-color: #5e5e5e;
 
-	--feed-bottom-border-color: #d0cece;
+	--article-bottom-border-color: #d0cece;
 
 	--feed-item-title-text-color: #000;
 	--feed-item-description-text-color: #999;
 	--feed-item-subtext-color: #bbb;
+
+	--article-tag-color: #bbb;
 
 	--nav-link-color: rgba(0, 0, 0, 0.3);
 	--nav-link-active-color: rgba(0, 0, 0, 0.8);
@@ -48,6 +50,9 @@
 	--feed-like-button-font-weight: 300;
 	--feed-item-subtext-font-size: 13px;
 	--feed-item-subtext-font-weight: 300;
+
+	--article-tag-font-size: 13px;
+	--article-tag-font-weight: 300;
 
 	--pagination-font-size: 16px;
 	--pagination-font-weight: 400;
