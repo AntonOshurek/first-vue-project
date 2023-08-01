@@ -36,7 +36,7 @@ const routes = [
 	{
 		path: routesPath.article,
 		name: routesNames.article,
-		component: Views.GlobalFeed,
+		component: Views.Article,
 	},
 	{
 		path: routesPath.createArticle,

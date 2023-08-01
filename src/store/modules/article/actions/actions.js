@@ -4,12 +4,12 @@ import { getArticle } from '@/api/article';
 
 const actions = {
 	[actionTypes.getArticle](context, params) {
-		const { articleId } = params;
+		const { slug } = params;
 
 		return new Promise((resolve) => {
 			context.commit(mutationTypes.getArticleStart);
 
-			getArticle(articleId)
+			getArticle(slug)
 				.then((res) => {
 					const data = res.data;
 
