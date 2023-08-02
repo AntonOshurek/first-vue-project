@@ -6,16 +6,16 @@ import {
 } from '@/variables/variables';
 
 const actionTypes = {
-	authRegister: `${authStoreAlias} register`,
-	authLogin: `${authStoreAlias} login`,
-	getCurrentUser: `${authStoreAlias} getCurrentUser`,
+	authRegister: `${authStoreAlias} registerAction`,
+	authLogin: `${authStoreAlias} loginAction`,
+	getCurrentUser: `${authStoreAlias} getCurrentUserAction`,
 
-	getFeed: `${feedStoreAlias} getFeed`,
+	getFeed: `${feedStoreAlias} getFeedAction`,
 
-	getPopularTags: `${popularTagsStoreAlias} getPopularTags`,
+	getPopularTags: `${popularTagsStoreAlias} getPopularTagsAction`,
 
-	getArticle: `${articleStoreAlias} getArticle`,
-	deleteArticle: `${articleStoreAlias} deleteArticle`,
+	getArticle: `${articleStoreAlias} getArticleAction`,
+	deleteArticle: `${articleStoreAlias} deleteArticleAction`,
 };
 
 export { actionTypes };

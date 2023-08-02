@@ -5,7 +5,7 @@ const mutations = {
 		state.isLoading = true;
 		state.data = null;
 		state.deleteArticleError = null;
-		state.error = null;
+		state.getArticleError = null;
 	},
 	[mutationTypes.getArticleSuccess](state, payload) {
 		state.isLoading = false;
@@ -14,7 +14,7 @@ const mutations = {
 	[mutationTypes.getArticleFailure](state, payload) {
 		state.isLoading = false;
 		state.data = null;
-		state.error = payload;
+		state.getArticleError = payload;
 	},
 
 	[mutationTypes.deleteArticleStart](state) {
@@ -24,6 +24,7 @@ const mutations = {
 	[mutationTypes.deleteArticleSuccess](state) {
 		state.deleteArticleProcessing = false;
 		state.data = null;
+		state.deleteArticleError = null;
 	},
 	[mutationTypes.deleteArticleFailure](state, payload) {
 		state.deleteArticleProcessing = false;

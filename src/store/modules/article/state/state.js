@@ -1,7 +1,7 @@
 const state = {
 	data: null,
 	isLoading: false,
-	error: null,
+	getArticleError: null,
 	deleteArticleProcessing: false,
 	deleteArticleError: null,
 };
