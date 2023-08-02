@@ -11,4 +11,15 @@ const getArticle = (slug) => {
 		});
 };
 
-export { getArticle };
+const deleteArticle = (slug) => {
+	return axios
+		.delete(`/articles/${slug}`)
+		.then((res) => {
+			return res;
+		})
+		.catch((err) => {
+			throw new Error(err.message);
+		});
+};
+
+export { getArticle, deleteArticle };

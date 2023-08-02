@@ -15,7 +15,7 @@
 
 <script>
 export default {
-	name: 'McvArticleControls',
+	name: 'McvCommonArticleControls',
 	props: {
 		articleData: {
 			type: Object,
@@ -26,5 +26,5 @@ export default {
 </script>
 
 <style>
-@import './article-controls.scss';
+@import '../article-controls.scss';
 </style>

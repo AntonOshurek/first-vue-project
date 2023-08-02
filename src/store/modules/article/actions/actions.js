@@ -1,6 +1,6 @@
 import { actionTypes } from '@/store/action-types/action-types';
 import { mutationTypes } from '@/store/mutation-types/mutation-types';
-import { getArticle } from '@/api/article';
+import { getArticle, deleteArticle } from '@/api/article';
 
 const actions = {
 	[actionTypes.getArticle](context, params) {
@@ -18,6 +18,22 @@ const actions = {
 				})
 				.catch((err) => {
 					context.commit(mutationTypes.getArticleFailure, err);
+				});
+		});
+	},
+	[actionTypes.deleteArticle](context, params) {
+		const { slug } = params;
+
+		return new Promise((resolve) => {
+			context.commit(mutationTypes.deleteArticleStart);
+
+			deleteArticle(slug)
+				.then(() => {
+					context.commit(mutationTypes.deleteArticleSuccess);
+					resolve();
+				})
+				.catch((err) => {
+					context.commit(mutationTypes.deleteArticleFailure, err.message);
 				});
 		});
 	},

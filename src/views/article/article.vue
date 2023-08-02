@@ -17,7 +17,9 @@
 			<div class="article__bottom-controls" v-if="articleData">
 				<McvArticleAuthor :article-data="articleData" />
 
-				<McvArticleControls :article-data="articleData" />
+				<McvCommonArticleControls v-if="!isAuthor" :article-data="articleData" />
+
+				<McvUserArticleControls v-if="isAuthor" :article-data="articleData" />
 			</div>
 
 			<McvCommentForm />
@@ -34,7 +36,8 @@ import { routesNames } from '@/variables/rotes';
 import {
 	McvArticleHeader,
 	McvArticleTags,
-	McvArticleControls,
+	McvCommonArticleControls,
+	McvUserArticleControls,
 	McvArticleAuthor,
 	McvCommentForm,
 } from '@/components';
@@ -47,9 +50,18 @@ export default {
 			isLoading: getterTypes.articleLoading,
 			articleData: getterTypes.articleData,
 			error: getterTypes.articleError,
+			currentUser: getterTypes.currentUser,
+			isLoggedIn: getterTypes.isLoggedIn,
 		}),
 		routesNames() {
 			return routesNames;
+		},
+		isAuthor() {
+			if (!this.currentUser || !this.articleData || !this.isLoggedIn) {
+				return false;
+			}
+
+			return this.currentUser.username === this.articleData.author.username;
 		},
 	},
 	mounted() {
@@ -62,13 +74,20 @@ export default {
 			},
 			immediate: true,
 		},
+		error: {
+			handler(error) {
+				console.log(error);
+			},
+			immediate: true,
+		},
 	},
 	components: {
 		McvLoading,
 		McvArticleHeader,
 		McvArticleTags,
 		McvError,
-		McvArticleControls,
+		McvCommonArticleControls,
+		McvUserArticleControls,
 		McvArticleAuthor,
 		McvCommentForm,
 	},
