@@ -8,24 +8,58 @@
 				/>
 			</svg>
 		</button>
-		<button class="article-controls__button article-controls__button--delete">
+		<button
+			class="article-controls__button article-controls__button--delete"
+			@click="deleteArticle"
+		>
 			Delete Article
-			<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
+			<svg
+				v-if="!deleteArticleProcessing"
+				xmlns="http://www.w3.org/2000/svg"
+				height="20"
+				viewBox="0 -960 960 960"
+				width="20"
+			>
 				<path
 					d="M299-98q-53.7 0-90.85-37.15Q171-172.3 171-226v-461h-71v-128h260v-74h239v74h261v128h-71v460.566q0 54.559-37.088 91.496Q714.825-98 661-98H299Zm362-589H299v461h362v-461ZM358-287h105v-339H358v339Zm140 0h105v-339H498v339ZM299-687v461-461Z"
 				/>
 			</svg>
+
+			<!-- <McvLoading v-if="deleteArticleProcessing" /> -->
 		</button>
+
+		<!-- <McvLoading v-if="deleteArticleProcessing" /> -->
+
+		<!-- <McvError v-if="deleteArticleError" :message="deleteArticleError" /> -->
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
+import { actionTypes } from '@/store/action-types/action-types';
+import { routesNames } from '@/variables/rotes';
+
 export default {
 	name: 'McvUserArticleControls',
 	props: {
 		articleData: {
 			type: Object,
 			required: true,
+		},
+	},
+	...mapGetters({
+		deleteArticleProcessing: getterTypes.deleteArticleProcessing,
+		deleteArticleError: getterTypes.deleteArticleError,
+	}),
+	methods: {
+		deleteArticle() {
+			this.$store
+				.dispatch(actionTypes.deleteArticle, { slug: this.$route.params.slug })
+				.then(() => {
+					this.$router.push({ name: routesNames.globalFeed });
+					console.log('PUSH!!!');
+				});
 		},
 	},
 };

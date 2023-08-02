@@ -29,6 +29,9 @@ const mutationTypes = {
 	getArticleStart: `${articleStoreAlias} getArticleStart`,
 	getArticleSuccess: `${articleStoreAlias} getArticleSuccess`,
 	getArticleFailure: `${articleStoreAlias} getArticleFailure`,
+	deleteArticleStart: `${articleStoreAlias} deleteArticleStart`,
+	deleteArticleSuccess: `${articleStoreAlias} deleteArticleSuccess`,
+	deleteArticleFailure: `${articleStoreAlias} deleteArticleFailure`,
 };
 
 export { mutationTypes };

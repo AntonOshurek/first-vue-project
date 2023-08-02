@@ -15,6 +15,7 @@ const actionTypes = {
 	getPopularTags: `${popularTagsStoreAlias} getPopularTags`,
 
 	getArticle: `${articleStoreAlias} getArticle`,
+	deleteArticle: `${articleStoreAlias} deleteArticle`,
 };
 
 export { actionTypes };

@@ -74,6 +74,12 @@ export default {
 			},
 			immediate: true,
 		},
+		error: {
+			handler(error) {
+				console.log(error);
+			},
+			immediate: true,
+		},
 	},
 	components: {
 		McvLoading,
