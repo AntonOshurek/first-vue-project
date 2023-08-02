@@ -23,9 +23,9 @@ const getterTypes = {
 	articleData: `${articleStoreAlias} article`,
 	articleLoading: `${articleStoreAlias} articleLoading`,
 	articleError: `${articleStoreAlias} articleError`,
-	deleteArticleStart: `${articleStoreAlias} articleError`,
-	deleteArticleProcessing: `${articleStoreAlias} articleLoading`,
-	deleteArticleError: `${articleStoreAlias} articleError`,
+
+	deleteArticleProcessing: `${articleStoreAlias} deleteArticleProcessing`,
+	deleteArticleError: `${articleStoreAlias} deleteArticleError`,
 };
 
 export { getterTypes };

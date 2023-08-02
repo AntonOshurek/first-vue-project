@@ -2,9 +2,17 @@
 	<div class="article">
 		<main class="article__main">
 			<section class="article-header-wrap">
-				<McvLoading v-if="isLoading" />
+				<div
+					class="article__system-info"
+					v-if="getArticleError || deleteArticleError || isLoading || deleteArticleProcessing"
+				>
+					<McvLoading v-if="isLoading || deleteArticleProcessing" />
 
-				<McvError v-if="error" :message="error" />
+					<McvError
+						v-if="getArticleError || deleteArticleError"
+						:message="getArticleError || deleteArticleError"
+					/>
+				</div>
 
 				<McvArticleHeader :article-data="articleData" v-if="articleData" />
 			</section>
@@ -49,9 +57,11 @@ export default {
 		...mapGetters({
 			isLoading: getterTypes.articleLoading,
 			articleData: getterTypes.articleData,
-			error: getterTypes.articleError,
+			getArticleError: getterTypes.articleError,
 			currentUser: getterTypes.currentUser,
 			isLoggedIn: getterTypes.isLoggedIn,
+			deleteArticleProcessing: getterTypes.deleteArticleProcessing,
+			deleteArticleError: getterTypes.deleteArticleError,
 		}),
 		routesNames() {
 			return routesNames;
@@ -74,7 +84,7 @@ export default {
 			},
 			immediate: true,
 		},
-		error: {
+		getArticleError: {
 			handler(error) {
 				console.log(error);
 			},
