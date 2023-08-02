@@ -12,7 +12,8 @@ import McvLoading from './loading/loading';
 import McvArticleHeader from './article-header/article-header';
 import McvArticleTags from './article-tags/article-tags';
 import McvArticleAuthor from './article-author/article-author';
-import McvArticleControls from '@/components/article-controls/article-controls';
+import McvCommonArticleControls from './article-controls/common-article-controls/common-article-controls';
+import McvUserArticleControls from './article-controls/user-article-controls/user-article-controls';
 import McvCommentForm from '@/components/comment-form/comment-form';
 
 export {
@@ -30,6 +31,7 @@ export {
 	McvArticleHeader,
 	McvArticleTags,
 	McvArticleAuthor,
-	McvArticleControls,
 	McvCommentForm,
+	McvCommonArticleControls,
+	McvUserArticleControls,
 };

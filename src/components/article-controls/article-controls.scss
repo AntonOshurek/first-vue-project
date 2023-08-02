@@ -10,6 +10,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: row-reverse;
+	gap: 3px;
 
 	padding: 3px 9px;
 
@@ -29,15 +31,21 @@
 	&:focus {
 		color: #fff;
 		background-color: rgb(159, 155, 155);
+
+		& > svg {
+			fill: #fff;
+		}
+	}
+
+	& > svg {
+		fill: #ccc;
 	}
 }
 
 .article-controls__button--favorite {
-	flex-direction: row-reverse;
-	gap: 3px;
-
 	color: var(--main-color);
 	border: 1px solid var(--main-color);
+
 	&:hover,
 	&:focus {
 		color: var(--standart-white);
@@ -50,5 +58,24 @@
 
 	& > svg {
 		fill: var(--main-color);
+	}
+}
+
+.article-controls__button--delete {
+	color: var(--delete-color);
+	border: 1px solid var(--delete-color);
+
+	& > svg {
+		fill: var(--delete-color);
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--standart-white);
+		background-color: var(--delete-color);
+
+		& > svg {
+			fill: var(--standart-white);
+		}
 	}
 }
