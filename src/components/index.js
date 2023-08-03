@@ -9,6 +9,7 @@ import McvPopularTags from './popular-tags/popular-tags';
 import McvFeedNavigation from './feed-navigation/feed-navigation';
 import McvPagination from './pagination/pagination';
 import McvLoading from './loading/loading';
+import McvError from '@/components/error/error';
 import McvArticleHeader from './article-header/article-header';
 import McvTagList from './tag-list/tag-list';
 import McvArticleAuthor from './article-author/article-author';
@@ -29,6 +30,7 @@ export {
 	McvPopularTags,
 	McvFeedNavigation,
 	McvLoading,
+	McvError,
 	McvArticleHeader,
 	McvTagList,
 	McvArticleAuthor,
