@@ -3,11 +3,10 @@
 		<main class="create-article__main">
 			<h2 class="visually-hidden">Create article page</h2>
 
-			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
+			<McvValidationErrors v-if="error" :validation-errors="error" />
 
 			<McvArticleForm
 				:initial-value="initialValue"
-				:errors="validationErrors"
 				:is-submiting="isSubmiting"
 				@articleSubmit="onSubmit"
 			/>
@@ -44,7 +43,6 @@ export default {
 		onSubmit(articleInput) {
 			this.$store.dispatch(actionTypes.createArticle, { articleInput }).then((article) => {
 				this.$router.push({ name: routesNames.article, params: { slug: article.slug } });
-				console.log(article);
 			});
 		},
 	},

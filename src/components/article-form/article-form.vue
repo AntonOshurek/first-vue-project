@@ -42,10 +42,6 @@ export default {
 			type: Object,
 			required: true,
 		},
-		validationErrors: {
-			type: Object,
-			required: false,
-		},
 		isSubmiting: {
 			type: Boolean,
 			required: true,

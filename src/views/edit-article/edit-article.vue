@@ -11,7 +11,6 @@
 			<div v-if="articleData && isAuthor && !isLoading && !articleError">
 				<McvArticleForm
 					:initial-value="initialValue"
-					:errors="validationErrors"
 					:is-submiting="isSubmiting"
 					@articleSubmit="onSubmit"
 				/>
@@ -56,7 +55,6 @@ export default {
 				body: '',
 				tagList: [],
 			},
-			validationErrors: null,
 			isSubmiting: false,
 		};
 	},

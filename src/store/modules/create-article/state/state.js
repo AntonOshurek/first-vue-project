@@ -1,6 +1,6 @@
-// const state = {
-// 	isSubmiting: false,
-// 	validationErrors: null,
-// };
+const state = {
+	isSubmiting: false,
+	validationErrors: null,
+};
 
-// export { state };
+export { state };
