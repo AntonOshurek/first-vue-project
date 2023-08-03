@@ -1,6 +1,6 @@
 <template>
-	<div class="article-editor">
-		<main class="article-editor__main">
+	<div class="create-article">
+		<main class="create-article__main">
 			<h2 class="visually-hidden">Create article page</h2>
 
 			<McvArticleForm />
