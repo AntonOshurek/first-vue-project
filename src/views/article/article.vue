@@ -19,7 +19,7 @@
 			<section class="article__body" v-if="articleData">
 				<p class="article__text">{{ articleData.body }}</p>
 
-				<McvArticleTags :tags-array="articleData.tagList" class="article__tags" />
+				<McvTagList :tags-array="articleData.tagList" class="article__tags" />
 			</section>
 
 			<div class="article__bottom-controls" v-if="articleData">
@@ -43,7 +43,7 @@ import { McvLoading } from '@/components';
 import { routesNames } from '@/variables/rotes';
 import {
 	McvArticleHeader,
-	McvArticleTags,
+	McvTagList,
 	McvCommonArticleControls,
 	McvUserArticleControls,
 	McvArticleAuthor,
@@ -94,7 +94,7 @@ export default {
 	components: {
 		McvLoading,
 		McvArticleHeader,
-		McvArticleTags,
+		McvTagList,
 		McvError,
 		McvCommonArticleControls,
 		McvUserArticleControls,

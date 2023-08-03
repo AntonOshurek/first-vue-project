@@ -10,7 +10,7 @@ import McvFeedNavigation from './feed-navigation/feed-navigation';
 import McvPagination from './pagination/pagination';
 import McvLoading from './loading/loading';
 import McvArticleHeader from './article-header/article-header';
-import McvArticleTags from './article-tags/article-tags';
+import McvTagList from './tag-list/tag-list';
 import McvArticleAuthor from './article-author/article-author';
 import McvCommonArticleControls from './article-controls/common-article-controls/common-article-controls';
 import McvUserArticleControls from './article-controls/user-article-controls/user-article-controls';
@@ -29,7 +29,7 @@ export {
 	McvFeedNavigation,
 	McvLoading,
 	McvArticleHeader,
-	McvArticleTags,
+	McvTagList,
 	McvArticleAuthor,
 	McvCommentForm,
 	McvCommonArticleControls,

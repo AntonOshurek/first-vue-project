@@ -1,11 +1,13 @@
-.article-tags {
+.tag-list{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 3px;
+
+	list-style: none;
 }
 
-.article-tags__tag {
+.tag-list__item {
 	padding: 4px 7px;
 	border-radius: 20px;
 	border: 1px solid var(--article-tag-color);
