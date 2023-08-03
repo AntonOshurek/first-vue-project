@@ -15,6 +15,7 @@ import McvArticleAuthor from './article-author/article-author';
 import McvCommonArticleControls from './article-controls/common-article-controls/common-article-controls';
 import McvUserArticleControls from './article-controls/user-article-controls/user-article-controls';
 import McvCommentForm from '@/components/comment-form/comment-form';
+import McvArticleForm from '@/components/article-form/article-form';
 
 export {
 	McvPagination,
@@ -34,4 +35,5 @@ export {
 	McvCommentForm,
 	McvCommonArticleControls,
 	McvUserArticleControls,
+	McvArticleForm,
 };
