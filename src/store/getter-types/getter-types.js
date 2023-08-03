@@ -3,6 +3,7 @@ import {
 	feedStoreAlias,
 	popularTagsStoreAlias,
 	articleStoreAlias,
+	createArticleStoreAlias,
 } from '@/variables/variables';
 
 const getterTypes = {
@@ -26,6 +27,9 @@ const getterTypes = {
 
 	deleteArticleProcessing: `${articleStoreAlias} deleteArticleProcessing`,
 	deleteArticleError: `${articleStoreAlias} deleteArticleError`,
+
+	createArticleIsSubmiting: `${createArticleStoreAlias} createArticleIsSubmiting`,
+	createArticleError: `${createArticleStoreAlias} createArticleError`,
 };
 
 export { getterTypes };

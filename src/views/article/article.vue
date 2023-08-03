@@ -4,13 +4,13 @@
 			<section class="article-header-wrap">
 				<div
 					class="article__system-info"
-					v-if="getArticleError || deleteArticleError || isLoading || deleteArticleProcessing"
+					v-if="articleError || deleteArticleError || isLoading || deleteArticleProcessing"
 				>
 					<McvLoading v-if="isLoading || deleteArticleProcessing" />
 
 					<McvError
-						v-if="getArticleError || deleteArticleError"
-						:message="getArticleError || deleteArticleError"
+						v-if="articleError || deleteArticleError"
+						:message="articleError || deleteArticleError"
 					/>
 				</div>
 
@@ -19,7 +19,7 @@
 			<section class="article__body" v-if="articleData">
 				<p class="article__text">{{ articleData.body }}</p>
 
-				<McvArticleTags :tags-array="articleData.tagList" class="article__tags" />
+				<McvTagList :tags-array="articleData.tagList" class="article__tags" />
 			</section>
 
 			<div class="article__bottom-controls" v-if="articleData">
@@ -39,17 +39,17 @@
 import { mapGetters } from 'vuex';
 import { actionTypes } from '@/store/action-types/action-types';
 import { getterTypes } from '@/store/getter-types/getter-types';
-import { McvLoading } from '@/components';
 import { routesNames } from '@/variables/rotes';
 import {
 	McvArticleHeader,
-	McvArticleTags,
+	McvTagList,
 	McvCommonArticleControls,
 	McvUserArticleControls,
 	McvArticleAuthor,
 	McvCommentForm,
+	McvLoading,
+	McvError,
 } from '@/components';
-import McvError from '@/components/error/error';
 
 export default {
 	name: 'McvArticle',
@@ -57,7 +57,7 @@ export default {
 		...mapGetters({
 			isLoading: getterTypes.articleLoading,
 			articleData: getterTypes.articleData,
-			getArticleError: getterTypes.articleError,
+			articleError: getterTypes.articleError,
 			currentUser: getterTypes.currentUser,
 			isLoggedIn: getterTypes.isLoggedIn,
 			deleteArticleProcessing: getterTypes.deleteArticleProcessing,
@@ -94,7 +94,7 @@ export default {
 	components: {
 		McvLoading,
 		McvArticleHeader,
-		McvArticleTags,
+		McvTagList,
 		McvError,
 		McvCommonArticleControls,
 		McvUserArticleControls,

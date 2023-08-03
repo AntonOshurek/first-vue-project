@@ -1,0 +1,15 @@
+.create-article {
+	padding: 50px var(--standart-side-padding);
+	background-color: var(--bg);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.create-article__main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	align-content: center;
+}

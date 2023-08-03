@@ -6,6 +6,8 @@ export const popularTagsStoreAlias = '[popularTags]';
 
 export const articleStoreAlias = '[article]';
 
+export const createArticleStoreAlias = '[createArticle]';
+
 export const storageNameForToken = 'vue-app-access-token';
 
 export const pageItemsLimit = 10;

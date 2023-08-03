@@ -1,13 +1,16 @@
 <template>
 	<div class="article-controls">
-		<button class="article-controls__button">
+		<router-link
+			class="article-controls__button"
+			:to="{ name: routesNames.editArticle, params: { slug: articleData.slug } }"
+		>
 			Edit Article
 			<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
 				<path
 					d="M207-197h50l324-325-50-50-324 325v50Zm587-382L589-785l21-22q42-43 99-43.5t99 41.5l32 33q35 33 31.5 78T837-622l-43 43Zm-58 57L303-88H97v-205l434-433 205 204Zm-178-24-27-26 50 50-23-24Z"
 				/>
 			</svg>
-		</button>
+		</router-link>
 		<button
 			class="article-controls__button article-controls__button--delete"
 			@click="deleteArticle"
@@ -43,6 +46,11 @@ export default {
 					console.log('PUSH!!!');
 				});
 		},
+	},
+	data() {
+		return {
+			routesNames: routesNames,
+		};
 	},
 };
 </script>

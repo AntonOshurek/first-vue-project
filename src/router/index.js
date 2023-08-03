@@ -41,12 +41,12 @@ const routes = [
 	{
 		path: routesPath.createArticle,
 		name: routesNames.createArticle,
-		component: Views.GlobalFeed,
+		component: Views.CreateArticle,
 	},
 	{
 		path: routesPath.editArticle,
 		name: routesNames.editArticle,
-		component: Views.GlobalFeed,
+		component: Views.EditArticle,
 	},
 	{
 		path: routesPath.tag,

@@ -53,7 +53,7 @@
 							>read more...</router-link
 						>
 
-						<McvArticleTags :tags-array="article.tagList" />
+						<McvTagList :tags-array="article.tagList" />
 					</div>
 				</article>
 			</li>
@@ -81,7 +81,7 @@ import McvPagination from '@/components/pagination/pagination';
 import queryString from 'query-string';
 import McvLoading from '@/components/loading/loading';
 import McvError from '@/components/error/error';
-import McvArticleTags from '@/components/article-tags/article-tags';
+import McvTagList from '@/components/tag-list/tag-list';
 
 export default {
 	name: 'McvFeed',
@@ -119,7 +119,7 @@ export default {
 		McvPagination,
 		McvLoading,
 		McvError,
-		McvArticleTags,
+		McvTagList,
 	},
 	mounted() {
 		this.fetchFeed();
