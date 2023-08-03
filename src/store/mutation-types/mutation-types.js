@@ -3,6 +3,7 @@ import {
 	feedStoreAlias,
 	popularTagsStoreAlias,
 	articleStoreAlias,
+	createArticleStoreAlias,
 } from '@/variables/variables';
 
 const mutationTypes = {
@@ -33,6 +34,10 @@ const mutationTypes = {
 	deleteArticleStart: `${articleStoreAlias} deleteArticleStart`,
 	deleteArticleSuccess: `${articleStoreAlias} deleteArticleSuccess`,
 	deleteArticleFailure: `${articleStoreAlias} deleteArticleFailure`,
+
+	createArticleStart: `${createArticleStoreAlias} createArticleStart`,
+	createArticleSuccess: `${createArticleStoreAlias} createArticleSuccess`,
+	createArticleFailure: `${createArticleStoreAlias} createArticleFailure`,
 };
 
 export { mutationTypes };

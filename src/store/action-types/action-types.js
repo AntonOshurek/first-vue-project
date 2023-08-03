@@ -3,6 +3,7 @@ import {
 	feedStoreAlias,
 	popularTagsStoreAlias,
 	articleStoreAlias,
+	createArticleStoreAlias,
 } from '@/variables/variables';
 
 const actionTypes = {
@@ -16,6 +17,8 @@ const actionTypes = {
 
 	getArticle: `${articleStoreAlias} getArticleAction`,
 	deleteArticle: `${articleStoreAlias} deleteArticleAction`,
+
+	createArticle: `${createArticleStoreAlias} createArticle`,
 };
 
 export { actionTypes };

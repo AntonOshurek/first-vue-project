@@ -16,10 +16,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { getterTypes } from '@/store/getter-types/getter-types';
+import { actionTypes } from '@/store/action-types/action-types';
 import { McvArticleForm, McvValidationErrors } from '@/components';
+import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'McvCreateArticle',
+	computed: {
+		...mapGetters({
+			isSubmiting: getterTypes.createArticleIsSubmiting,
+			error: getterTypes.createArticleError,
+		}),
+	},
 	data() {
 		return {
 			initialValue: {
@@ -28,14 +38,14 @@ export default {
 				body: '',
 				tagList: [],
 			},
-			validationErrors: null,
-			isSubmiting: false,
 		};
 	},
 	methods: {
-		onSubmit(data) {
-			console.log('onSubmit in createArticle');
-			console.log(data);
+		onSubmit(articleInput) {
+			this.$store.dispatch(actionTypes.createArticle, { articleInput }).then((article) => {
+				this.$router.push({ name: routesNames.article, params: { slug: article.slug } });
+				console.log(article);
+			});
 		},
 	},
 	components: {
