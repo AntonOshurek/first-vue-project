@@ -27,6 +27,8 @@ class AuthApi {
 
 	updateCurrentUser(currentUserInput) {
 		return axios.put('/user', { user: currentUserInput }).then((res) => {
+			console.log('axios responce');
+			console.log(res);
 			return res.data.user;
 		});
 	}

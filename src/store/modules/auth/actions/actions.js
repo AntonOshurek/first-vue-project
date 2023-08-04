@@ -54,17 +54,23 @@ const actions = {
 				});
 		});
 	},
-	[actionTypes.updateCurrentUser](context, { currentUserInput }) {
+	[actionTypes.updateCurrentUser](context, { currenUserInput }) {
 		context.commit(mutationTypes.updateCurrentUserStart);
+
+		console.log('action');
+		console.log(currenUserInput);
 
 		return new Promise((resolve) => {
 			authApi
-				.updateCurrentUser(currentUserInput)
+				.updateCurrentUser(currenUserInput)
 				.then((user) => {
+					console.log('responce');
+					console.log(user);
 					context.commit(mutationTypes.updateCurrentUserSuccess, user);
 					resolve(user);
 				})
 				.catch((err) => {
+					console.log(err);
 					context.commit(mutationTypes.updateCurrentUserFailure, err);
 				});
 		});
