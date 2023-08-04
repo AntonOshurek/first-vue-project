@@ -8,12 +8,13 @@
 			<McvError v-if="error" :message="error" />
 
 			<ul class="popular-tags__list" v-if="popularTags">
-				<li class="popular-tags__item" v-for="(tag, index) in popularTags" :key="index">
+				<li class="popular-tags__item" v-for="(tagText, index) in popularTags" :key="index">
 					<router-link
+						v-if="tagText"
 						class="popular-tags__link"
-						:to="{ name: routesNames.tag, params: { slug: tag } }"
+						:to="{ name: routesNames.tag, params: { slug: tagText } }"
 					>
-						{{ tag }}
+						{{ tagText }}
 					</router-link>
 				</li>
 			</ul>

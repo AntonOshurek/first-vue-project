@@ -13,7 +13,7 @@ const actions = {
 					resolve(res);
 				})
 				.catch((err) => {
-					context.commit(mutationTypes.createArticleFailure, err);
+					context.commit(mutationTypes.createArticleFailure, err.response.data.errors);
 				});
 		});
 	},

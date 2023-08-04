@@ -2,16 +2,17 @@
 	<div class="article-editor">
 		<main class="article-editor__main">
 			<h2 class="visually-hidden">Edit article page</h2>
-			<McvLoading v-if="isLoading" />
+			<McvLoading v-if="editArticleIsLoading || editArticleIsSubmiting" />
 
-			<McvError v-if="articleError" :message="articleError" />
+			<McvValidationErrors
+				v-if="editArticleValidationError"
+				:validation-errors="editArticleValidationError"
+			/>
 
-			<McvValidationErrors v-if="validationErrors" :validation-errors="validationErrors" />
-
-			<div v-if="articleData && isAuthor && !isLoading && !articleError">
+			<div v-if="editArticleData && isAuthor && !editArticleIsLoading && !getArticleForEditError">
 				<McvArticleForm
 					:initial-value="initialValue"
-					:is-submiting="isSubmiting"
+					:is-submiting="editArticleIsSubmiting"
 					@articleSubmit="onSubmit"
 				/>
 			</div>
@@ -23,77 +24,66 @@
 import { mapGetters } from 'vuex';
 import { actionTypes } from '@/store/action-types/action-types';
 import { getterTypes } from '@/store/getter-types/getter-types';
-import { McvArticleForm, McvLoading, McvError, McvValidationErrors } from '@/components';
+import { McvArticleForm, McvLoading, McvValidationErrors } from '@/components';
 import { routesNames } from '@/variables/rotes';
 
 export default {
 	name: 'McvEditArticle',
 	computed: {
 		...mapGetters({
-			isLoading: getterTypes.articleLoading,
-			articleData: getterTypes.articleData,
-			articleError: getterTypes.articleError,
 			currentUser: getterTypes.currentUser,
 			isLoggedIn: getterTypes.isLoggedIn,
+			editArticleIsSubmiting: getterTypes.editArticleIsSubmiting,
+			editArticleValidationError: getterTypes.editArticleValidationError,
+			getArticleForEditError: getterTypes.getArticleForEditError,
+			editArticleIsLoading: getterTypes.editArticleIsLoading,
+			editArticleData: getterTypes.editArticleData,
 		}),
 		routesNames() {
 			return routesNames;
 		},
 		isAuthor() {
-			if (!this.currentUser || !this.articleData || !this.isLoggedIn) {
+			if (!this.currentUser || !this.editArticleData || !this.isLoggedIn) {
 				return false;
 			}
-
-			return this.currentUser.username === this.articleData.author.username;
+			return this.currentUser.username === this.editArticleData.author.username;
 		},
-	},
-	data() {
-		return {
-			initialValue: {
-				title: '',
-				description: '',
-				body: '',
-				tagList: [],
-			},
-			isSubmiting: false,
-		};
+		initialValue() {
+			if (!this.editArticleData) {
+				return {
+					title: '',
+					description: '',
+					body: '',
+					tagList: [],
+				};
+			} else {
+				return {
+					title: this.editArticleData.title,
+					description: this.editArticleData.description,
+					body: this.editArticleData.body,
+					tagList: this.editArticleData.tagList,
+				};
+			}
+		},
 	},
 	methods: {
 		onSubmit(data) {
-			console.log('onSubmit in createArticle');
-			console.log(data);
+			this.$store
+				.dispatch(actionTypes.editArticle, {
+					slug: this.$route.params.slug,
+					articleInput: data,
+				})
+				.then((article) => {
+					this.$router.push({ name: routesNames.article, params: { slug: article.slug } });
+				});
 		},
 	},
 	mounted() {
-		this.$store.dispatch(actionTypes.getArticle, { slug: this.$route.params.slug });
-	},
-	watch: {
-		articleData: {
-			handler(data) {
-				console.log(data);
-
-				// const newInitialData = {
-				// 	title: data.title,
-				// 	description: data.description,
-				// 	body: data.description,
-				// 	tagList: data.taglist,
-				// };
-
-				// this.initialValue = newInitialData;
-			},
-			immediate: true,
-		},
-		getArticleError: {
-			handler(error) {
-				console.log(error);
-			},
-			immediate: true,
-		},
+		this.$store.dispatch(actionTypes.getArticleForEdit, { slug: this.$route.params.slug });
 	},
 	components: {
 		McvArticleForm,
 		McvLoading,
-		McvError,
 		McvValidationErrors,
 	},
 };
