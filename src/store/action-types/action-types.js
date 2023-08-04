@@ -12,6 +12,7 @@ const actionTypes = {
 	authLogin: `${authStoreAlias} loginAction`,
 	getCurrentUser: `${authStoreAlias} getCurrentUserAction`,
 	updateCurrentUser: `${authStoreAlias} updateCurrentUser`,
+	logout: `${authStoreAlias} logout`,
 
 	getFeed: `${feedStoreAlias} getFeedAction`,
 

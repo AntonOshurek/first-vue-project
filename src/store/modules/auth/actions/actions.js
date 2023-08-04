@@ -57,15 +57,10 @@ const actions = {
 	[actionTypes.updateCurrentUser](context, { currenUserInput }) {
 		context.commit(mutationTypes.updateCurrentUserStart);
 
-		console.log('action');
-		console.log(currenUserInput);
-
 		return new Promise((resolve) => {
 			authApi
 				.updateCurrentUser(currenUserInput)
 				.then((user) => {
-					console.log('responce');
-					console.log(user);
 					context.commit(mutationTypes.updateCurrentUserSuccess, user);
 					resolve(user);
 				})
@@ -73,6 +68,13 @@ const actions = {
 					console.log(err);
 					context.commit(mutationTypes.updateCurrentUserFailure, err);
 				});
+		});
+	},
+	[actionTypes.logout](context) {
+		return new Promise((resolve) => {
+			storageService.setItem(storageNameForToken, '');
+			context.commit(mutationTypes.logout);
+			resolve();
 		});
 	},
 };
