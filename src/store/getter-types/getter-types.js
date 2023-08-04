@@ -5,6 +5,7 @@ import {
 	articleStoreAlias,
 	createArticleStoreAlias,
 	editArticleStoreAlias,
+	settingsStoreAlias,
 } from '@/variables/variables';
 
 const getterTypes = {
@@ -13,6 +14,9 @@ const getterTypes = {
 	isSubmiting: `${authStoreAlias} isSubmiting`,
 	isAnonymous: `${authStoreAlias} isAnonymous`,
 	validationErrors: `${authStoreAlias} validationErrors`,
+
+	settingsIsSubmitting: `${settingsStoreAlias} isSibmitting`,
+	settingsValidationErrors: `${settingsStoreAlias} settingsValidationErrors`,
 
 	feedData: `${feedStoreAlias} feedData`,
 	isLoading: `${feedStoreAlias} isLoading`,

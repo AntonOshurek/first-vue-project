@@ -1,0 +1,10 @@
+.settings {
+	background-color: var(--bg);
+}
+
+.settings__main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, min-content);
+	gap: 30px;
+}

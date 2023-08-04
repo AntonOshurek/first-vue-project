@@ -11,6 +11,7 @@ const actionTypes = {
 	authRegister: `${authStoreAlias} registerAction`,
 	authLogin: `${authStoreAlias} loginAction`,
 	getCurrentUser: `${authStoreAlias} getCurrentUserAction`,
+	updateCurrentUser: `${authStoreAlias} updateCurrentUser`,
 
 	getFeed: `${feedStoreAlias} getFeedAction`,
 
