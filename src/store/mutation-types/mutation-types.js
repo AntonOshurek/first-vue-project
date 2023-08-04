@@ -20,6 +20,10 @@ const mutationTypes = {
 	getCurrentUserSuccess: `${authStoreAlias} getCurrentUserSuccess`,
 	getCurrentUserFailure: `${authStoreAlias} getCurrentUserFailure`,
 
+	updateCurrentUserStart: `${authStoreAlias} updateCurrentUserStart`,
+	updateCurrentUserSuccess: `${authStoreAlias} updateCurrentUserSuccess`,
+	updateCurrentUserFailure: `${authStoreAlias} updateCurrentUserFailure`,
+
 	getFeedStart: `${feedStoreAlias} getFeedStart`,
 	getFeedSuccess: `${feedStoreAlias} getFeedSuccess`,
 	getFeedFailure: `${feedStoreAlias} getFeedFailure`,

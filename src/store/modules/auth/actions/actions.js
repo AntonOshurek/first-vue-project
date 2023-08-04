@@ -11,10 +11,10 @@ const actions = {
 		return new Promise((resolve, reject) => {
 			authApi
 				.register(credentials)
-				.then((res) => {
-					context.commit(mutationTypes.authRegisterSuccess, res.data.user);
-					storageService.setItem(storageNameForToken, res.data.user.token);
-					resolve(res.data.user);
+				.then((user) => {
+					context.commit(mutationTypes.authRegisterSuccess, user);
+					storageService.setItem(storageNameForToken, user.token);
+					resolve(user);
 				})
 				.catch((err) => {
 					context.commit(mutationTypes.authRegisterFailure, err.response.data.errors);
@@ -28,10 +28,10 @@ const actions = {
 		return new Promise((resolve, reject) => {
 			authApi
 				.login(credentials)
-				.then((res) => {
-					context.commit(mutationTypes.authLoginSuccess, res.data.user);
-					storageService.setItem(storageNameForToken, res.data.user.token);
-					resolve(res.data.user);
+				.then((user) => {
+					context.commit(mutationTypes.authLoginSuccess, user);
+					storageService.setItem(storageNameForToken, user.token);
+					resolve(user);
 				})
 				.catch((err) => {
 					context.commit(mutationTypes.authLoginFailure, err.response.data.errors);
@@ -45,12 +45,33 @@ const actions = {
 		return new Promise((resolve) => {
 			authApi
 				.getCurrentUser()
-				.then((res) => {
-					context.commit(mutationTypes.getCurrentUserSuccess, res.data.user);
-					resolve(res.data.user);
+				.then((user) => {
+					context.commit(mutationTypes.getCurrentUserSuccess, user);
+					resolve(user);
 				})
 				.catch(() => {
 					context.commit(mutationTypes.getCurrentUserFailure);
+				});
+		});
+	},
+	[actionTypes.updateCurrentUser](context, { currenUserInput }) {
+		context.commit(mutationTypes.updateCurrentUserStart);
+
+		console.log('action');
+		console.log(currenUserInput);
+
+		return new Promise((resolve) => {
+			authApi
+				.updateCurrentUser(currenUserInput)
+				.then((user) => {
+					console.log('responce');
+					console.log(user);
+					context.commit(mutationTypes.updateCurrentUserSuccess, user);
+					resolve(user);
+				})
+				.catch((err) => {
+					console.log(err);
+					context.commit(mutationTypes.updateCurrentUserFailure, err);
 				});
 		});
 	},

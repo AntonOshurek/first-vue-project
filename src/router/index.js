@@ -21,7 +21,7 @@ const routes = [
 	{
 		path: routesPath.settings,
 		name: routesNames.settings,
-		component: Views.GlobalFeed,
+		component: Views.Settings,
 	},
 	{
 		path: routesPath.yourFeed,

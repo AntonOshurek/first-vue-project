@@ -10,6 +10,8 @@ export const createArticleStoreAlias = '[createArticle]';
 
 export const editArticleStoreAlias = '[editArticle]';
 
+export const settingsStoreAlias = '[settings]';
+
 export const storageNameForToken = 'vue-app-access-token';
 
 export const pageItemsLimit = 10;

@@ -6,6 +6,7 @@ import TagFeed from './tag-feed/tag-feed';
 import Article from './article/article';
 import CreateArticle from './create-article/create-article';
 import EditArticle from './edit-article/edit-article';
+import Settings from './settings/settings';
 
 export {
 	LoginView,
@@ -16,4 +17,5 @@ export {
 	Article,
 	CreateArticle,
 	EditArticle,
+	Settings,
 };
