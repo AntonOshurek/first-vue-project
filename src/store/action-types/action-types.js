@@ -4,6 +4,7 @@ import {
 	popularTagsStoreAlias,
 	articleStoreAlias,
 	createArticleStoreAlias,
+	editArticleStoreAlias,
 } from '@/variables/variables';
 
 const actionTypes = {
@@ -19,6 +20,9 @@ const actionTypes = {
 	deleteArticle: `${articleStoreAlias} deleteArticleAction`,
 
 	createArticle: `${createArticleStoreAlias} createArticle`,
+
+	editArticle: `${editArticleStoreAlias} editArticle`,
+	getArticleForEdit: `${editArticleStoreAlias} getArticleForEdit`,
 };
 
 export { actionTypes };

@@ -23,7 +23,15 @@ const deleteArticle = (slug) => {
 };
 
 const createArticle = (articleInput) => {
-	return axios.post(`/articles`, { article: articleInput });
+	return axios.post(`/articles`, { article: articleInput }).then((res) => {
+		return res.data.article;
+	});
 };
 
-export { getArticle, deleteArticle, createArticle };
+const updateArticle = (slug, articleInput) => {
+	return axios.put(`/articles/${slug}`, { article: articleInput }).then((res) => {
+		return res.data.article;
+	});
+};
+
+export { getArticle, deleteArticle, createArticle, updateArticle };

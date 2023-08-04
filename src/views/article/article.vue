@@ -77,20 +77,6 @@ export default {
 	mounted() {
 		this.$store.dispatch(actionTypes.getArticle, { slug: this.$route.params.slug });
 	},
-	watch: {
-		articleData: {
-			handler(data) {
-				console.log(data);
-			},
-			immediate: true,
-		},
-		getArticleError: {
-			handler(error) {
-				console.log(error);
-			},
-			immediate: true,
-		},
-	},
 	components: {
 		McvLoading,
 		McvArticleHeader,

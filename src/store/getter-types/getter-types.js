@@ -4,6 +4,7 @@ import {
 	popularTagsStoreAlias,
 	articleStoreAlias,
 	createArticleStoreAlias,
+	editArticleStoreAlias,
 } from '@/variables/variables';
 
 const getterTypes = {
@@ -30,6 +31,12 @@ const getterTypes = {
 
 	createArticleIsSubmiting: `${createArticleStoreAlias} createArticleIsSubmiting`,
 	createArticleError: `${createArticleStoreAlias} createArticleError`,
+
+	editArticleIsSubmiting: `${editArticleStoreAlias} editArticleIsSubmiting`,
+	editArticleValidationError: `${editArticleStoreAlias} editArticleError`,
+	getArticleForEditError: `${editArticleStoreAlias} getArticleForEditError`,
+	editArticleIsLoading: `${editArticleStoreAlias} editArticleIsLoading`,
+	editArticleData: `${editArticleStoreAlias} editArticleData`,
 };
 
 export { getterTypes };

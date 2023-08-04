@@ -49,10 +49,10 @@ export default {
 	},
 	data() {
 		return {
-			title: '',
-			description: '',
-			body: '',
-			tagList: '',
+			title: this.initialValue.title,
+			description: this.initialValue.description,
+			body: this.initialValue.body,
+			tagList: this.initialValue.tagList.join(' '),
 		};
 	},
 	methods: {

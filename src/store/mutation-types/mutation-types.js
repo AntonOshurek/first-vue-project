@@ -4,6 +4,7 @@ import {
 	popularTagsStoreAlias,
 	articleStoreAlias,
 	createArticleStoreAlias,
+	editArticleStoreAlias,
 } from '@/variables/variables';
 
 const mutationTypes = {
@@ -38,6 +39,13 @@ const mutationTypes = {
 	createArticleStart: `${createArticleStoreAlias} createArticleStart`,
 	createArticleSuccess: `${createArticleStoreAlias} createArticleSuccess`,
 	createArticleFailure: `${createArticleStoreAlias} createArticleFailure`,
+
+	editArticleStart: `${editArticleStoreAlias} editArticleStart`,
+	editArticleSuccess: `${editArticleStoreAlias} editArticleSuccess`,
+	editArticleFailure: `${editArticleStoreAlias} editArticleFailure`,
+	getArticleForEditStart: `${editArticleStoreAlias} getArticleForEditStart`,
+	getArticleForEditSuccess: `${editArticleStoreAlias} getArticleForEditSuccess`,
+	getArticleForEditFailure: `${editArticleStoreAlias} getArticleForEditFailure`,
 };
 
 export { mutationTypes };
