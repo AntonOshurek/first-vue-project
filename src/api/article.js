@@ -23,14 +23,7 @@ const deleteArticle = (slug) => {
 };
 
 const createArticle = (articleInput) => {
-	return axios
-		.post(`/articles`, { article: articleInput })
-		.then((res) => {
-			return res.data.article;
-		})
-		.catch((err) => {
-			throw new Error(err.message);
-		});
+	return axios.post(`/articles`, { article: articleInput });
 };
 
 export { getArticle, deleteArticle, createArticle };
