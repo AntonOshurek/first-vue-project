@@ -49,6 +49,11 @@ const mutations = {
 		state.currentUser = payload;
 	},
 	[mutationTypes.updateCurrentUserFailure]() {},
+
+	[mutationTypes.logout](state) {
+		state.currentUser = null;
+		state.isLoggedIn = false;
+	},
 };
 
 export { mutations };

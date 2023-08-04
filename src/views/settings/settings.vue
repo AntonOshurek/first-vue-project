@@ -64,6 +64,7 @@
 import { mapGetters } from 'vuex';
 import { actionTypes } from '@/store/action-types/action-types';
 import { getterTypes } from '@/store/getter-types/getter-types';
+import { routesNames } from '@/variables/rotes';
 // import { McvLoading, McvValidationErrors } from '@/components';
 // import McvValidationErrors from '@/components/validation-errors/validation-errors';
 
@@ -88,9 +89,6 @@ export default {
 	},
 	methods: {
 		onSubmit() {
-			console.log('submited settings');
-			console.log(this.form);
-
 			let newData = {
 				username: this.form.username,
 				bio: this.form.bio,
@@ -103,7 +101,9 @@ export default {
 			this.$store.dispatch(actionTypes.updateCurrentUser, { currenUserInput: newData });
 		},
 		logout() {
-			console.log('logout button');
+			this.$store.dispatch(actionTypes.logout).then(() => {
+				this.$router.push({ name: routesNames.globalFeed });
+			});
 		},
 	},
 	conponents: {
