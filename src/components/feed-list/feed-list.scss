@@ -76,44 +76,6 @@
 	align-self: center;
 }
 
-.feed-article__likes {
-	grid-area: likes;
-	height: min-content;
-	align-self: center;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px;
-
-	font-family: var(--basic-font);
-	font-size: var(--feed-like-button_font-size);
-	font-weight: var(--feed-like-button-font-weight);
-	color: var(--main-color);
-
-	user-select: none;
-	cursor: pointer;
-
-	border: 1px solid var(--main-color);
-	background-color: transparent;
-	padding: 4px 8px;
-	border-radius: 4px;
-
-	&:hover,
-	&:focus {
-		color: var(--standart-white);
-		background-color: var(--main-color);
-
-		&>svg {
-			fill: var(--standart-white);
-		}
-	}
-
-	&>svg {
-		fill: var(--main-color);
-	}
-}
-
 .feed-article__title {
 	font-family: var(--basic-font);
 	font-size: var(--feed-title-font-size);
