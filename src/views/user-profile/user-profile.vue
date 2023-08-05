@@ -5,7 +5,7 @@
 
 			<McvLoading v-if="isLoading" />
 
-			<section class="user-profile__banner" v-if="userData">
+			<section class="user-profile__banner" v-if="userData" :key="username">
 				<h3 class="user-profile__username">{{ userData.username }}</h3>
 				<p class="user-profile__bio">{{ userData.bio }}</p>
 				<img class="user-profile__image" :src="userData.image" alt="" width="100" height="100" />
@@ -30,14 +30,14 @@
 
 					<router-link
 						class="global-feed__nav-link"
-						:to="{ name: routesNames.userProfile }"
+						:to="{ name: routesNames.userProfile, params: { slug: username } }"
 						active-class="global-feed__nav-link--active"
 						>{{ isCurrentUserProfile ? 'My Aricles' : 'User Articles' }}</router-link
 					>
 
 					<router-link
 						class="global-feed__nav-link"
-						:to="{ name: routesNames.userProfileFavorite }"
+						:to="{ name: routesNames.userProfileFavorite, params: { slug: username } }"
 						active-class="global-feed__nav-link--active"
 						>Favorited Articles</router-link
 					>
@@ -80,20 +80,29 @@ export default {
 			return this.currentUser.username === this.userData.username;
 		},
 		apiUrl() {
-			// favorited
+			const isFavorites = this.$route.path.includes('favorites');
 
-			return `/articles?author=${this.currentUser.username}`;
+			if (isFavorites) {
+				return `/articles?favorited=${this.username}`;
+			} else {
+				return `/articles?author=${this.username}`;
+			}
 		},
 	},
 	mounted() {
-		this.$store.dispatch(actionTypes.getUserprofile, { slug: this.username });
+		this.getUserProfile(this.username);
 	},
 	watch: {
-		userData: {
+		username: {
 			handler(data) {
-				console.log(data);
+				this.getUserProfile(data);
 			},
 			immediate: true,
+		},
+	},
+	methods: {
+		getUserProfile(username) {
+			this.$store.dispatch(actionTypes.getUserprofile, { slug: username });
 		},
 	},
 	components: {

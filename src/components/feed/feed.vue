@@ -82,6 +82,12 @@ export default {
 			},
 			immediate: true,
 		},
+		apiUrl: {
+			handler() {
+				this.fetchFeed();
+			},
+			immediate: true,
+		},
 	},
 	methods: {
 		fetchFeed() {
