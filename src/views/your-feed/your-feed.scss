@@ -18,16 +18,16 @@
 		"nav nav tags"
 		"feed feed tags"
 	;
-}
 
-.global-feed__nav {
-	grid-area: nav;
-}
+		& > .global-feed__nav {
+				grid-area: nav;
+			}
 
-.popular-tags {
-	grid-area: tags;
-}
+			& > .popular-tags {
+				grid-area: tags;
+			}
 
-.feed {
-	grid-area: feed;
+			& > .feed {
+				grid-area: feed;
+			}
 }

@@ -6,6 +6,7 @@ import {
 	createArticleStoreAlias,
 	editArticleStoreAlias,
 	likeStoreAlias,
+	userProfileStoreAlias,
 } from '@/variables/variables';
 
 const actionTypes = {
@@ -28,6 +29,8 @@ const actionTypes = {
 	getArticleForEdit: `${editArticleStoreAlias} getArticleForEdit`,
 
 	addLike: `${likeStoreAlias} addLike`,
+
+	getUserprofile: `${userProfileStoreAlias} addLike`,
 };
 
 export { actionTypes };

@@ -6,6 +6,7 @@ import {
 	createArticleStoreAlias,
 	editArticleStoreAlias,
 	likeStoreAlias,
+	userProfileStoreAlias,
 } from '@/variables/variables';
 
 const mutationTypes = {
@@ -57,6 +58,10 @@ const mutationTypes = {
 	addLikeStart: `${likeStoreAlias} addLikeStart`,
 	addLikeSuccess: `${likeStoreAlias} addLikeSuccess`,
 	addLikeFailure: `${likeStoreAlias} addLikeFailure`,
+
+	getUserProfileStart: `${userProfileStoreAlias} getUserProfileStart`,
+	getUserProfileSuccess: `${userProfileStoreAlias} getUserProfileSuccess`,
+	getUserProfileFailure: `${userProfileStoreAlias} getUserProfileFailure`,
 };
 
 export { mutationTypes };

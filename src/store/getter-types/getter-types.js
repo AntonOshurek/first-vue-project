@@ -6,6 +6,7 @@ import {
 	createArticleStoreAlias,
 	editArticleStoreAlias,
 	settingsStoreAlias,
+	userProfileStoreAlias,
 } from '@/variables/variables';
 
 const getterTypes = {
@@ -41,6 +42,10 @@ const getterTypes = {
 	getArticleForEditError: `${editArticleStoreAlias} getArticleForEditError`,
 	editArticleIsLoading: `${editArticleStoreAlias} editArticleIsLoading`,
 	editArticleData: `${editArticleStoreAlias} editArticleData`,
+
+	userProfileData: `${userProfileStoreAlias} userProfileData`,
+	userProfileLoading: `${userProfileStoreAlias} userProfileLoading`,
+	userProfileError: `${userProfileStoreAlias} userProfileError`,
 };
 
 export { getterTypes };
