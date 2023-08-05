@@ -27,8 +27,7 @@
 	padding: 4px 8px;
 	border-radius: 4px;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		color: var(--standart-white);
 		background-color: var(--main-color);
 
@@ -41,5 +40,13 @@
 		fill: var(--main-color);
 		width: 20px;
 		height: 20px;
+	}
+}
+
+.feed-article-like-button--liked {
+	color: var(--standart-white);
+	background-color: var(--main-color);
+	&>svg {
+		fill: var(--standart-white);
 	}
 }
