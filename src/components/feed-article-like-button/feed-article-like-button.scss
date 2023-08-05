@@ -1,0 +1,52 @@
+.feed-article-like-button {
+	grid-area: likes;
+
+	height: min-content;
+	width: 50px;
+	align-self: center;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-columns: 20px 20px;
+	grid-template-rows: 1fr;
+	justify-content: center;
+	align-items: center;
+
+	font-family: var(--basic-font);
+	font-size: var(--feed-like-button_font-size);
+	font-weight: var(--feed-like-button-font-weight);
+	color: var(--main-color);
+	text-align: center;
+	vertical-align:middle;
+
+	user-select: none;
+	cursor: pointer;
+
+	border: 1px solid var(--main-color);
+	background-color: transparent;
+	padding: 4px 8px;
+	border-radius: 4px;
+
+	&:hover {
+		color: var(--standart-white);
+		background-color: var(--main-color);
+
+		&>svg {
+			fill: var(--standart-white);
+		}
+	}
+
+	&>svg {
+		fill: var(--main-color);
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.feed-article-like-button--liked {
+	color: var(--standart-white);
+	background-color: var(--main-color);
+	&>svg {
+		fill: var(--standart-white);
+	}
+}

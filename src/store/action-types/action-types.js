@@ -5,6 +5,7 @@ import {
 	articleStoreAlias,
 	createArticleStoreAlias,
 	editArticleStoreAlias,
+	likeStoreAlias,
 } from '@/variables/variables';
 
 const actionTypes = {
@@ -25,6 +26,8 @@ const actionTypes = {
 
 	editArticle: `${editArticleStoreAlias} editArticle`,
 	getArticleForEdit: `${editArticleStoreAlias} getArticleForEdit`,
+
+	addLike: `${likeStoreAlias} addLike`,
 };
 
 export { actionTypes };

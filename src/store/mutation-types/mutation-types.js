@@ -5,6 +5,7 @@ import {
 	articleStoreAlias,
 	createArticleStoreAlias,
 	editArticleStoreAlias,
+	likeStoreAlias,
 } from '@/variables/variables';
 
 const mutationTypes = {
@@ -52,6 +53,10 @@ const mutationTypes = {
 	getArticleForEditStart: `${editArticleStoreAlias} getArticleForEditStart`,
 	getArticleForEditSuccess: `${editArticleStoreAlias} getArticleForEditSuccess`,
 	getArticleForEditFailure: `${editArticleStoreAlias} getArticleForEditFailure`,
+
+	addLikeStart: `${likeStoreAlias} addLikeStart`,
+	addLikeSuccess: `${likeStoreAlias} addLikeSuccess`,
+	addLikeFailure: `${likeStoreAlias} addLikeFailure`,
 };
 
 export { mutationTypes };
