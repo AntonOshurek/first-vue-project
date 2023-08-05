@@ -31,7 +31,7 @@ const routes = [
 	{
 		path: routesPath.userProfile,
 		name: routesNames.userProfile,
-		component: Views.GlobalFeed,
+		component: Views.UserProfile,
 	},
 	{
 		path: routesPath.article,

@@ -14,6 +14,8 @@ export const settingsStoreAlias = '[settings]';
 
 export const likeStoreAlias = '[like]';
 
+export const userProfileStoreAlias = '[userProfile]';
+
 export const storageNameForToken = 'vue-app-access-token';
 
 export const pageItemsLimit = 10;

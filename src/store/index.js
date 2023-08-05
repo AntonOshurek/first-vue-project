@@ -8,6 +8,7 @@ import createArticle from './modules/create-article';
 import editArticle from './modules/edit-article';
 import settings from './modules/settings';
 import like from './modules/like';
+import userProfile from './modules/user-profile';
 
 export default createStore({
 	state: {},
@@ -23,5 +24,6 @@ export default createStore({
 		editArticle,
 		settings,
 		like,
+		userProfile,
 	},
 });
