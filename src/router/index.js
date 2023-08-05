@@ -34,6 +34,11 @@ const routes = [
 		component: Views.UserProfile,
 	},
 	{
+		path: routesPath.userProfileFavorite,
+		name: routesNames.userProfileFavorite,
+		component: Views.UserProfile,
+	},
+	{
 		path: routesPath.article,
 		name: routesNames.article,
 		component: Views.Article,
